@@ -73,6 +73,3 @@ db/*.sqlite3
 
 # vim artifacts
 **.swp
-
-# keep OmniAuth service provider secrets out of the Git repo
-config/initializers/omniauth.rb
