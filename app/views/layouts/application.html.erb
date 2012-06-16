@@ -13,13 +13,27 @@
     <%= yield(:head) %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
+    <header>
+      <div class="user-nav">
+        <% if user_signed_in? %>
+          Logged in as <%= current_user.name %>
+          <%= link_to 'Logout', signout_path %>
+        <% else %>
+          <%= link_to 'Sign in through GitHub', signin_path %>
+        <% end %>
+      </div>
+      <div class="container-fluid logo">
+        <%= render 'layouts/header' %>
+      </div>
+      <div class="navbar">
+        <nav class="navbar-inner">
+           <div class="container">
+             <%= render 'layouts/navigation' %>
+           </div>
+         </nav>
+      </div>
     </header>
+
     <div id="main" role="main">
       <div class="container">
         <div class="content">

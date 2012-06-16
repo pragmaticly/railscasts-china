@@ -1,15 +1,6 @@
-<%= link_to "Railscasts China", root_path, :class => 'brand' %>
 <ul class="nav">
-  <% if user_signed_in? %>
-    <li>
-    Logged in as <%= current_user.name %>
-    </li>
-    <li>
-    <%= link_to 'Logout', signout_path %>        
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', signin_path %>  
-    </li>
-  <% end %>
+  <li><a href="#">Attachment</a></li>
+  <li><a href="#">Authentication</a></li>
+  <li><a href="#">Carrierwave</a></li>
+  <li><a href="#">File</a></li>
 </ul>
