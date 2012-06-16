@@ -21,6 +21,7 @@ gem "bootstrap-sass", ">= 2.0.3"
 gem "airbrake"
 gem "puma"
 gem "coderay"
+gem "kaminari"
 
 # Deploy with Capistrano
 gem 'capistrano'

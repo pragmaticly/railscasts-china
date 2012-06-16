@@ -1,3 +1,107 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#main {
+  .container-fluid {
+    padding: 0 100px;
+
+    .episode {
+      margin: 0 190px 20px 0;
+      padding: 0 0 18px 0;
+      border-bottom: solid 1px #E5E5E5;
+
+      .screenshot {
+        float: left;
+        width: 200px;
+      }
+
+      .content {
+        margin: 0 -20px 0 15px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+        -moz-border-radius: 0 0 6px 6px;
+        border-radius: 0 0 6px 6px;
+
+        .info {
+          color: #999;
+          font-size: 12px;
+
+          .number {
+            text-transform: uppercase;
+            font-weight: bold;
+          }
+
+          a {
+            color: #999;
+          }
+        }
+
+        h3 {
+          margin: 3px 0;
+
+          a {
+            color: #E98C08;
+          }
+        }
+
+        .description {
+          margin-bottom: 17px;
+
+          .stats {
+            font-size: 11px;
+            color: #777;
+            font-weight: normal;
+            padding-left: 3px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .side {
+    width: 180px;
+    position: absolute;
+    right: 100px;
+    top: 160px;
+
+    .search_option {
+      h3 {
+        padding: 4px 20px;
+        margin: 0;
+        font-weight: normal;
+        color: #444;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        -webkit-border-top-left-radius: 6px;
+        -webkit-border-top-right-radius: 6px;
+        -moz-border-radius-topleft: 6px;
+        -moz-border-radius-topright: 6px;
+        border: solid 1px #BBB;
+        border-bottom-color: #AAA;
+        background: -moz-linear-gradient(top, #EEE, #CCC);
+        background: -webkit-gradient(linear, left top, left bottom, from(#EEE), to(#CCC));
+        background: -moz-linear-gradient(top, #EEE, #CCC);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#EEE', endColorstr='#CCC');
+      }
+
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: solid 1px #BBB;
+        border-top: none;
+        padding: 5px 20px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        -moz-border-radius-bottomright: 5px;
+      }
+    }
+  }
+}

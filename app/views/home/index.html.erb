@@ -1,1 +1,37 @@
-<h3>Home</h3>
+<%- @episodes.each do |episode| %>
+  <div class="row episode">
+    <div class="screenshot">
+      <a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1">
+        <img src="http://railscasts-china.com/assets/episodes/stills/013-live-show-with-ye-dingding-1.png?1338654676"/>
+      </a>
+    </div>
+
+    <div class="content">
+      <div class="info">
+        <span class="number">Episode #13</span> –
+        <span class="published_at">Jun 02, 2012</span> –
+        <span class="comments"><a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1?view=comments">1 comments</a></span>
+      </div>
+
+      <h3>
+        <a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1">
+          Live Show with Ye Dingding 1
+        </a>
+      </h3>
+      <div class="description">
+        Dingding 展示如何写一个简单的在线聊天室。第一期主要是展示如何实现backend 和写测试。
+        <span class="stats">(84 minutes)</span>
+      </div>
+
+      <div class="watch">
+        <a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1" class="btn btn-primary">Watch Episode</a>
+      </div>
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+<% end %>
+
+<aside class="side">
+  <%= render 'home/aside' %>
+</aside>

@@ -20,4 +20,6 @@ class Episode < ActiveRecord::Base
   validates :description, presence: true
   validates :notes, presence: true
   validates :seconds, numericality: { greater_than: 0 }
+
+  default_scope order: 'published_at DESC'
 end
