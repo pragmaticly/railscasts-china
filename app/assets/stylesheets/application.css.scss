@@ -84,8 +84,18 @@ header {
     .navbar-inner {
       @include border-radius(0);
       .container {
-        padding: 0 100px;
+        padding: 0 80px;
+      }
+
+      .search-query {
+        border-radius: 3px;
+        width: 200px;
       }
     }
   }
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
 }
