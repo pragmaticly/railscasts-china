@@ -29,6 +29,8 @@ gem 'capistrano-ext'
 group :development, :test do
   gem "rspec-rails", ">= 2.10.1"
   gem "factory_girl_rails", ">= 3.3.0"
+  gem "shoulda-matchers"
+  gem "rspec-instafail"
   gem "capybara"
 end
 
@@ -48,10 +50,10 @@ group :development do
     gem 'rb-notifu'
   end
   gem "guard-bundler", ">= 0.1.3"
-  gem "guard-rails", ">= 0.0.3"
   gem "guard-livereload", ">= 0.3.0"
   gem "guard-rspec", ">= 0.4.3"
   gem "annotate", '~> 2.4.1.beta1'
+  gem 'guard-annotate'
   gem "rails_best_practices"
   gem 'foreman'
 end
