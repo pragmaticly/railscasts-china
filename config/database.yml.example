@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: railscasts-china_test
   pool: 15
-  username: postgres 
+  username: postgres
   password: postgres
 
 production:
