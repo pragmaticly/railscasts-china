@@ -12,4 +12,5 @@
 
 class Comment < ActiveRecord::Base
   # attr_accessible :title, :body
+  belongs_to :episodes, counter_cache: true
 end
