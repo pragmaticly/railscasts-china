@@ -1,6 +1,7 @@
 RailscastsChina::Application.routes.draw do
-  get "episodes/show"
-  root :to => "home#index"
+  root :to => "episodes#index"
+
+  resources :episodes
 
   resources :users, :only => [ :show, :edit, :update ]
   get '/auth/:provider/callback' => 'sessions#create'
