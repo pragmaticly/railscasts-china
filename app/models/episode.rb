@@ -28,4 +28,12 @@ class Episode < ActiveRecord::Base
   validates :seconds, numericality: { greater_than: 0 }
 
   default_scope order: 'published_at DESC'
+
+  def to_param
+    permalink.to_s
+  end
+
+  def minutes
+    seconds / 60
+  end
 end
