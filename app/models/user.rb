@@ -9,9 +9,13 @@
 #  email      :string(255)
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
+#  admin      :boolean
 #
 
 class User < ActiveRecord::Base
+
+  has_many :episodes
+
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :name, presence: true

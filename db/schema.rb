@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120616081027) do
+ActiveRecord::Schema.define(:version => 20120617095358) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "episode_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "episodes", :force => true do |t|
     t.string   "name"
@@ -23,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120616081027) do
     t.text     "file_sizes"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
@@ -32,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20120616081027) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.boolean  "admin"
   end
 
 end
