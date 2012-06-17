@@ -12,9 +12,13 @@
 #  file_sizes   :text
 #  created_at   :datetime        not null
 #  updated_at   :datetime        not null
+#  user_id      :integer
 #
 
 class Episode < ActiveRecord::Base
+
+  belongs_to :user
+
   validates :name, presence: true
   validates :permalink, presence: true
   validates :description, presence: true
