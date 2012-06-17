@@ -4,6 +4,6 @@ class EpisodesController < ApplicationController
   end
 
   def index
-    @episodes = Episode.all
+    @episodes = Episode.page(params[:page])
   end
 end

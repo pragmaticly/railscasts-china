@@ -18,6 +18,8 @@
 
 class Episode < ActiveRecord::Base
 
+  paginates_per 10
+
   has_many :comments
   belongs_to :user
 
