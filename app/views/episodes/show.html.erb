@@ -1,2 +1,40 @@
-<h1>Episodes#show</h1>
-<p>Find me in app/views/episodes/show.html.erb</p>
+<% content_for :head do %>
+  <%= meta_tag('episode-url', 'http://railscasts-china.com/assets/episodes/video/013-live-show-with-ye-dingding-1.mp4') %>
+<% end %>
+
+<div class="row episode" id="episode">
+  <div class="content">
+    <div class="screenshot">
+      <a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1">
+        <img src="http://railscasts-china.com/assets/episodes/stills/013-live-show-with-ye-dingding-1.png?1338654676"/>
+      </a>
+    </div>
+
+    <h3>
+      <span class="number">#13</span>
+      <a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1">
+        Live Show with Ye Dingding 1
+      </a>
+    </h3>
+
+    <div class="info">
+      <span class="published_at">Jun 02, 2012</span> |
+      <span class="stats">84 分钟</span> |
+      <span>
+        <a href="/">Live</a>, <a href="/">Show</a>
+      </span>
+    </div>
+
+    <div class="description">
+      Dingding 展示如何写一个简单的在线聊天室。第一期主要是展示如何实现backend 和写测试。
+    </div>
+
+    <div class="watch">
+      <a href="http://railscasts-china.com/episodes/13-live-show-with-ye-dingding-1" class="btn btn-primary">Click to Play Video ▶</a>
+    </div>
+
+    <div class="clearfix"></div>
+  </div>
+</div>
+
+<%= render 'shared/player' %>
