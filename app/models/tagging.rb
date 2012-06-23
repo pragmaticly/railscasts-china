@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: comments
+# Table name: taggings
 #
 #  id         :integer         not null, primary key
+#  tag_id     :integer
 #  episode_id :integer
-#  user_id    :integer
-#  content    :text
 #  created_at :datetime        not null
 #  updated_at :datetime        not null
 #
 
-class Comment < ActiveRecord::Base
-  belongs_to :episode, counter_cache: true
+class Tagging < ActiveRecord::Base
+  belongs_to :tag
+  belongs_to :episodes
 end
