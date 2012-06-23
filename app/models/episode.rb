@@ -40,4 +40,13 @@ class Episode < ActiveRecord::Base
   def minutes
     seconds / 60
   end
+
+  def add_tags!(tags_string)
+    tags_string.split(',').each do |tag|
+      tag = tag.strip
+      self.tags << ::Tag.find_or_create_by_name(tag) unless self.tags.collect(&:name).include?(tag)
+    end
+    self.tags
+  end
+
 end
