@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :tag do
+    name { "Tag #{Tag.count + 1}" }
   end
 end
