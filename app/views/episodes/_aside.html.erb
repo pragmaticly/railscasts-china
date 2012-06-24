@@ -1,8 +1,8 @@
 <div class="search_option">
-  <h3>Categories</h3>
+  <h3>Tags</h3>
   <ul>
-    <li><a href="/?tag_id=2">Active Record</a></li>
-    <li><a href="/?tag_id=19">Active Resource</a></li>
-    <li><a href="/?tag_id=3">Active Support</a></li>
+    <% Tag.all.each do |tag| %>
+      <li><%= link_to tag.name, root_path(tag_name: tag.name)%></li>
+    <% end %>
   </ul>
 </div>
