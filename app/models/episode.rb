@@ -33,6 +33,8 @@ class Episode < ActiveRecord::Base
 
   default_scope order: 'published_at DESC'
 
+  scope :by_tag, lambda{|tag_name| joins(:tags).where("tags.name = ?", tag_name)}
+
   def to_param
     permalink.to_s
   end
