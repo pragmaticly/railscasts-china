@@ -8,6 +8,21 @@ describe Episode do
   it { should validate_presence_of :description }
   it { should validate_presence_of :notes }
 
+  describe "Scope" do
+    describe ".by_tag" do
+      before do
+        @episode1 = create(:episode)
+        @episode2 = create(:episode)
+        @episode1.tags << Tag.create(name: "activerecord")
+        @episode2.tags << Tag.create(name: "activemodel")
+      end
+
+      it "should filter the episode by tag_name" do
+        Episode.by_tag('activemodel').all.should == [@episode2]
+      end
+    end
+  end
+
   describe "Instance Method" do
     let(:episode) { create(:episode, permalink: 13466, seconds: 600) }
 
