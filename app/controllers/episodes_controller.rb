@@ -4,6 +4,6 @@ class EpisodesController < ApplicationController
   end
 
   def index
-    @episodes = Episode.page(params[:page]).by_tag(params[:tag_name])
+    @episodes = Episode.by_tag(params[:tag_name]).page(params[:page])
   end
 end
