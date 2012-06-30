@@ -26,8 +26,4 @@ admin.episodes.new({ name: 'Omniauth 1', permalink: 'omniauth-1', description: '
                      published_at: '2011-12-25 20:15:44', seconds: 1260
                    })
 
-admin.episodes.new({ name: 'Omniauth 1', permalink: 'omniauth-1', description: '介绍如何使用OmniAuth来做基于第三方服务的认证。',
-                     notes: "Gemfile:\r\n\r\n```Gemfile\r\ngem 'omniauth'\r\ngem 'omniauth-github'\r\n```\r\n\r\n初始化OmniAuth:\r\n\r\n```config/initializers/omniauth.rb\r\nRails.application.config.middleware.use OmniAuth::Builder do\r\n  provider :github, 'd78181e1ec709f32d844',\r\n    '7fd79b37dd8a4423c5989b6ae6d4fe358af11dc'\r\nend\r\n```\r\n\r\n路由:\r\n```config/routes.rb\r\nmatch \"/auth/:provider/callback\", :to => 'sessions#create'\r\n```\r\n\r\nUser model(这段代码会在下一期进行重构，具体原因请看视",
-                     published_at: '2011-12-25 20:15:44', seconds: 1260
-                   })
 admin.save!

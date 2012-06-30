@@ -1,6 +1,6 @@
 class EpisodesController < ApplicationController
   def show
-    @episode = Episode.new
+    @episode = Episode.find_by_permalink(params[:id])
   end
 
   def index

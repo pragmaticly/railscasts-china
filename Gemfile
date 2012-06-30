@@ -22,6 +22,7 @@ gem "airbrake"
 gem "puma"
 gem "coderay"
 gem "kaminari"
+gem "redcarpet"
 
 # Deploy with Capistrano
 gem 'capistrano'

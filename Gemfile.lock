@@ -95,7 +95,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.2)
       ffi (~> 1.0.6)
-    coderay (1.0.6)
+    coderay (1.0.7)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -220,6 +220,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.1.1)
     rspec (2.10.0)
       rspec-core (~> 2.10.0)
       rspec-expectations (~> 2.10.0)
@@ -307,6 +308,7 @@ DEPENDENCIES
   rails!
   rails_best_practices
   rb-fsevent
+  redcarpet
   rspec-instafail
   rspec-rails (>= 2.10.1)
   sass-rails!

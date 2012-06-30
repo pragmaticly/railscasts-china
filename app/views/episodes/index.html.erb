@@ -10,7 +10,7 @@
       <div class="info">
         <span class="number">Episode #<%= episode.id %></span> –
         <span class="published_at">
-          <%= episode.published_at.strftime("%B %d, %Y") %>
+          <%= time_tag(episode.published_at) %>
         </span> –
         <span class="comments">
           <a href="<%= episode_path(episode, view: 'comments') %>">
