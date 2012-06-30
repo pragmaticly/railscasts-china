@@ -28,6 +28,9 @@ gem "redcarpet"
 gem 'capistrano'
 gem 'capistrano-ext'
 
+# File Uploading
+gem 'carrierwave'
+
 group :development, :test do
   gem "rspec-rails", ">= 2.10.1"
   gem "factory_girl_rails", ">= 3.3.0"
