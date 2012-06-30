@@ -1,4 +1,4 @@
-class AddStllToEpisodes < ActiveRecord::Migration
+class AddStillToEpisodes < ActiveRecord::Migration
   def change
     add_column :episodes, :still, :string
   end
