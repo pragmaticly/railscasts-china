@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120623091744) do
+ActiveRecord::Schema.define(:version => 20120630145737) do
 
   create_table "comments", :force => true do |t|
     t.integer  "episode_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120623091744) do
     t.datetime "updated_at",                    :null => false
     t.integer  "user_id"
     t.integer  "comments_count", :default => 0
+    t.string   "still"
   end
 
   create_table "taggings", :force => true do |t|

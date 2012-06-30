@@ -14,9 +14,12 @@
 #  updated_at     :datetime        not null
 #  user_id        :integer
 #  comments_count :integer         default(0)
+#  still          :string(255)
 #
 
 class Episode < ActiveRecord::Base
+
+  mount_uploader :stil, StillUploader
 
   paginates_per 10
 
