@@ -4,9 +4,9 @@ class SessionsController < ApplicationController
     redirect_to '/auth/github'
   end
 
-
   def create
     auth = request.env["omniauth.auth"]
+    auth['uid'] = auth['uid'].to_s
     user = User.find_by(provider: auth['provider'], uid: auth['uid']) || User.create_with_omniauth(auth)
     reset_session
     session[:user_id] = user.id

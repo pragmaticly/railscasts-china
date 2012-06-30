@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+
   def show
     @episode = Episode.new
   end
@@ -6,4 +7,8 @@ class EpisodesController < ApplicationController
   def index
     @episodes = Episode.by_tag(params[:tag_name]).page(params[:page])
   end
+
+  def new
+  end
+
 end

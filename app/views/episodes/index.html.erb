@@ -38,6 +38,11 @@
   </div>
 <% end %>
 
+<% if current_user.try(:admin)%>
+  <%= button_to "Create new episode", new_episode_path, method: :get %>
+<% end %>
+
+
 <aside class="side">
   <%= render 'aside' %>
 </aside>
