@@ -15,13 +15,16 @@
 #  user_id        :integer
 #  comments_count :integer         default(0)
 #  still          :string(255)
+#  publish        :boolean
 #
 
 class Episode < ActiveRecord::Base
 
-  mount_uploader :stil, StillUploader
+  mount_uploader :still, StillUploader
 
   paginates_per 10
+
+  attr_accessor :duration
 
   has_many :comments
   has_many :taggings
@@ -33,6 +36,8 @@ class Episode < ActiveRecord::Base
   validates :description, presence: true
   validates :notes, presence: true
   validates :seconds, numericality: { greater_than: 0 }
+
+  before_create :set_published_at
 
   default_scope order: 'published_at DESC'
 
@@ -53,5 +58,17 @@ class Episode < ActiveRecord::Base
     end
     self.tags
   end
+
+  def duration=(value)
+    #TODO change duration to seconds
+    self.seconds = value
+  end
+
+  protected
+
+    def set_published_at
+      #TODO before add setting published_at, just make it the same with craeted_at
+      self.published_at = self.created_at
+    end
 
 end

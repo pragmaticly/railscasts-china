@@ -1,0 +1,43 @@
+<div> 
+  <%= form_for @episode do |f| %>
+    <div class="field">
+      <label for="name">Name</label>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field">
+      <label for="permalink">Permalink</label>
+      <%= f.text_field :permalink %>
+    </div>
+
+    <div class="field">
+      <label for="description">Description</label>
+      <%= f.text_area :description, rows: 3, cols: 30 %>
+    </div>
+
+    <div class="field">
+      <label for="notes">Notes</label>
+      <%= f.text_area :notes, rows: 20, cols: 80, id: 'notes_edit' %>
+    </div>
+
+    <div class="field">
+      <label for="still">Still</label>
+      <%= f.file_field :still %>
+    </div>
+
+    <div class="field">
+      <label for="duration">Duration</label>
+      <%= f.text_field :duration %>
+    </div>
+
+    <div class="field">
+      <label for="publish">Publish</label>
+      <%= f.check_box :publish %>
+    </div>
+
+    <%= f.submit %>
+
+
+  <% end %>
+
+</div>

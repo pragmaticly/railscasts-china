@@ -93,4 +93,16 @@
 
     }
   }
+
+  .field {
+    margin: 10px 0;
+    label {
+      font-size: 14px;
+      display: block;
+    }
+    #notes_edit{
+      width: 600px;
+    }
+  }
+
 }
