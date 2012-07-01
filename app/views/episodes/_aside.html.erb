@@ -2,7 +2,7 @@
   <h3>Tags</h3>
   <ul>
     <% Tag.all.each do |tag| %>
-      <li><%= link_to tag.name, root_path(tag_name: tag.name)%></li>
+      <li><%= link_to tag.name, tag_episodes_path(tag)%></li>
     <% end %>
   </ul>
 </div>

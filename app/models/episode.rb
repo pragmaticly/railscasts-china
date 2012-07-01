@@ -37,7 +37,7 @@ class Episode < ActiveRecord::Base
 
   before_create :set_published_at
 
-  default_scope order: 'published_at DESC'
+  default_scope -> { order('published_at DESC') }
 
   scope :by_tag, lambda{ |tag_name| joins(:tags).where("tags.name = ?", tag_name) unless tag_name.blank? }
 
@@ -49,10 +49,16 @@ class Episode < ActiveRecord::Base
     seconds / 60
   end
 
-  def add_tags!(tags_string)
+  attr_accessor :tag_list
+
+  def tag_list
+    tags.map(&:name).join(", ")
+  end
+
+  def tag_list=(tags_string)
     tags_string.split(',').each do |tag|
       tag = tag.strip
-      self.tags << ::Tag.find_or_create_by_name(tag) unless self.tags.collect(&:name).include?(tag)
+      self.tags << ::Tag.where(name: tag).first_or_create unless self.tags.collect(&:name).include?(tag)
     end
     self.tags
   end

@@ -21,7 +21,9 @@
       <span class="published_at"><%= time_tag(@episode.published_at) %></span> |
       <span class="stats"><%= @episode.minutes %> minutes</span> |
       <span>
-        <a href="/">Live</a>, <a href="/">Show</a>
+        <% @episode.tags.each do |tag| %>
+          <a href="/tags/#{tag.name}/episodes"><%= tag.name %></a>
+        <% end %>
       </span>
     </div>
 

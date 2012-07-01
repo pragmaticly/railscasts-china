@@ -49,20 +49,20 @@ describe Episode do
     describe "#add_tags!" do
       it "should create Tag" do
         expect do
-          episode.add_tags!("new")
+          episode.tag_list = "new"
         end.to change(Tag, :count).by(1)
       end
 
       it "should spilt the tag string" do
         tags_string = "activerecord, 3.0"
-        episode.add_tags!(tags_string)
+        episode.tag_list = tags_string
         episode.tags.collect(&:name).include?('activerecord').should be_true
         episode.tags.collect(&:name).include?('3.0').should be_true
       end
 
       it "should not duplicate the tags" do
         tags_string = "activerecord, activerecord"
-        episode.add_tags!(tags_string)
+        episode.tag_list = tags_string
         episode.tags.size.should == 1
       end
     end

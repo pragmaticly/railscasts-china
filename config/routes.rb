@@ -2,9 +2,12 @@ RailscastsChina::Application.routes.draw do
   root :to => "episodes#index"
 
   resources :episodes
-
-  resources :episodes, only: [ :show ]
   resources :users, only: [ :show, :edit, :update ]
+
+  resources :tags, only: [] do
+    resources :episodes, only: [:index]
+  end
+
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', as: :signin
   get '/signout' => 'sessions#destroy', as: :signout

@@ -3,7 +3,7 @@ class EpisodesController < ApplicationController
   before_filter :fetch_episode, only: [:show, :edit, :update]
 
   def index
-    @episodes = Episode.by_tag(params[:tag_name]).page(params[:page])
+    @episodes = Episode.by_tag(params[:tag_id]).page(params[:page])
   end
 
   def show
@@ -36,8 +36,8 @@ class EpisodesController < ApplicationController
   private
 
   def episode_params
-    params.require(:episode).permit(:name, :permalink, :notes,
-                                    :description, :still, :duration, :publish)
+    params.require(:episode).permit(:name, :permalink, :notes, :description,
+                                    :still, :duration, :publish, :tag_list)
   end
 
   def fetch_episode
