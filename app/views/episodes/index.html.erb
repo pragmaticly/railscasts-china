@@ -1,12 +1,12 @@
 <%- @episodes.each do |episode| %>
-  <div class="row episode">
-    <div class="screenshot">
+  <article class="row episode">
+    <aside class="screenshot">
       <a href="<%= episode_path(episode) %>">
         <%= image_tag episode.still.url %>
       </a>
-    </div>
+    </aside>
 
-    <div class="content">
+    <section class="content clearfix">
       <div class="info">
         <span class="number">Episode #<%= episode.id %></span> –
         <span class="published_at">
@@ -32,16 +32,9 @@
       <div class="watch">
         <a href="<%= episode_path(episode) %>" class="btn btn-primary">Watch Episode</a>
       </div>
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
+    </section>
+  </article>
 <% end %>
-
-<% if current_user.try(:admin)%>
-  <%= button_to "Create new episode", new_episode_path, method: :get %>
-<% end %>
-
 
 <aside class="side">
   <%= render 'aside' %>

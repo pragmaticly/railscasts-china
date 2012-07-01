@@ -14,6 +14,12 @@
       .screenshot {
         float: left;
         width: 200px;
+        margin-right: 20px;
+
+        img {
+          border: solid 1px #999;
+          display: block;
+        }
       }
 
       > .content {

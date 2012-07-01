@@ -1,11 +1,15 @@
 class EpisodesController < ApplicationController
-
-  def show
-    @episode = Episode.find_by_permalink(params[:id])
-  end
+  before_filter :admin_required, only: [:new, :create, :edit, :update]
+  before_filter :fetch_episode, only: [:show, :edit, :update]
 
   def index
     @episodes = Episode.by_tag(params[:tag_name]).page(params[:page])
+  end
+
+  def show
+  end
+
+  def edit
   end
 
   def new
@@ -21,13 +25,22 @@ class EpisodesController < ApplicationController
     end
   end
 
+  def update
+    if @episode.update_attributes(episode_params)
+      redirect_to @episode, notice: "Episode updated successfully."
+    else
+      render :edit
+    end
+  end
 
   private
 
-    def episode_params
-      params.require(:episode).permit(:name, :permalink, :notes,
-                                      :description, :still, :duration, :publish)
-    end
+  def episode_params
+    params.require(:episode).permit(:name, :permalink, :notes,
+                                    :description, :still, :duration, :publish)
+  end
 
-
+  def fetch_episode
+    @episode ||= Episode.find_by_permalink(params[:id])
+  end
 end

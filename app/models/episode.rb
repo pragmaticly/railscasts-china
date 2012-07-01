@@ -24,8 +24,6 @@ class Episode < ActiveRecord::Base
 
   paginates_per 10
 
-  attr_accessor :duration
-
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
@@ -59,16 +57,10 @@ class Episode < ActiveRecord::Base
     self.tags
   end
 
-  def duration=(value)
-    #TODO change duration to seconds
-    self.seconds = value
-  end
-
   protected
 
-    def set_published_at
-      #TODO before add setting published_at, just make it the same with craeted_at
-      self.published_at = self.created_at
-    end
-
+  def set_published_at
+    #TODO before add setting published_at, just make it the same with craeted_at
+    self.published_at = self.created_at
+  end
 end
