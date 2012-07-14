@@ -26,3 +26,5 @@ playControl = ->
 
 $ ->
   playControl()
+  if window.location.search.indexOf('autoplay=true') != -1
+    $('#episode .watch').click()
