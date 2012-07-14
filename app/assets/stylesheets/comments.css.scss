@@ -14,12 +14,14 @@
     }
 
     .content {
-      padding: 18px;
-      padding-bottom: 0px;
+      padding: 14px 18px;
       border: solid 1px #CCC;
       border-top: none;
-      textarea {
-        width: auto;
+      form {
+        margin-bottom: 0px;
+        textarea {
+          width: auto;
+        }
       }
     }
   }
