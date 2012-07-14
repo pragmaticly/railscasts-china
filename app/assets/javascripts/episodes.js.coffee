@@ -14,9 +14,15 @@ playVideo = ->
       ready: ->
         $(this).jPlayer("setMedia", {
           m4v: url
-        })
+        }).jPlayer('play')
       swfPath: "/assets"
       supplied: "m4v"
       size: { width: 960, height: 600 }
+
+playControl = ->
+  $("#episode .watch").one 'click', (e) ->
+    $("#jp_container_1").show()
+    playVideo()
+
 $ ->
-  playVideo()
+  playControl()

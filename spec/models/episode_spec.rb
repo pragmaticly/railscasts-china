@@ -46,7 +46,7 @@ describe Episode do
       end
     end
 
-    describe "#add_tags!" do
+    describe "#tags" do
       it "should create Tag" do
         expect do
           episode.tag_list = "new"
@@ -65,8 +65,12 @@ describe Episode do
         episode.tag_list = tags_string
         episode.tags.size.should == 1
       end
+
+      it "should get the tag list" do
+        episode.tags << Tag.create(name: "test")
+        episode.tags << Tag.create(name: "rspec")
+        episode.tag_list.should == "test, rspec"
+      end
     end
-
   end
-
 end

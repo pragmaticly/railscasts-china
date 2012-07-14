@@ -33,7 +33,10 @@
 
     <div class="watch">
       <a class="btn btn-primary">Click to Play Video ▶</a>
+      <a class="btn btn-info" href="<%= @episode.asset_url %>">Download</a>
     </div>
+
+    <%= render 'shared/player' %>
   </div>
 
   <div class="tabbable">
@@ -58,5 +61,3 @@
     </div>
   </div>
 </div>
-
-<%= render 'shared/player' %>

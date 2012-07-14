@@ -45,6 +45,10 @@ class Episode < ActiveRecord::Base
     permalink.to_s
   end
 
+  def asset_url
+    "http://media.railscasts-china.com/assets/episodes/video/#{permalink}.mp4"
+  end
+
   def minutes
     seconds / 60
   end
