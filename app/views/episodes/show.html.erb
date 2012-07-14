@@ -1,5 +1,11 @@
 <% content_for :head do %>
   <%= meta_tag('episode-url', 'http://railscasts-china.com/assets/episodes/video/013-live-show-with-ye-dingding-1.mp4') %>
+
+  <% if user_signed_in? %>
+    <script type="text/javascript">
+      current_user = { id: <%= current_user.id %>, episode_id: "<%= @episode.to_param %>", avatar: "<%= GravatarImageTag::gravatar_url(current_user.email) %>" }
+    </script>
+  <% end %>
 <% end %>
 
 <div class="row episode" id="episode">
@@ -52,7 +58,7 @@
       </div>
 
       <div class="tab-pane" id="comments">
-        Comment List
+        <%= render partial: "comments", locals: { comments: @episode.comments } %>
       </div>
 
       <div class="tab-pane" id="similar">
@@ -61,3 +67,9 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(function() {
+    var rccn = new Rccn;
+  });
+</script>

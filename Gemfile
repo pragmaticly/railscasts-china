@@ -31,6 +31,10 @@ gem 'capistrano-ext'
 # File Uploading
 gem 'carrierwave'
 
+# Comment Tree Structure
+gem 'ancestry'
+gem 'gravatar_image_tag'
+
 group :development, :test do
   gem "rspec-rails", ">= 2.10.1"
   gem "factory_girl_rails", ">= 3.3.0"

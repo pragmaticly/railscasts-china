@@ -1,7 +1,10 @@
 RailscastsChina::Application.routes.draw do
   root :to => "episodes#index"
 
-  resources :episodes
+  resources :episodes do
+    resources :comments
+  end
+
   resources :users, only: [ :show, :edit, :update ]
 
   resources :tags, only: [] do

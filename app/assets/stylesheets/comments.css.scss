@@ -1,0 +1,26 @@
+@import "bootstrap/mixins";
+
+.comment {
+  margin: 20px 0;
+
+  .container {
+    .username {
+      padding: 5px 18px;
+      font-size: 12px;
+      border: solid 1px #BBB;
+      border-bottom: none;
+      @include border-radius(5px 5px 0 0);
+      @include gradient-vertical(#EEE, #CCC);
+    }
+
+    .content {
+      padding: 18px;
+      padding-bottom: 0px;
+      border: solid 1px #CCC;
+      border-top: none;
+      textarea {
+        width: auto;
+      }
+    }
+  }
+}

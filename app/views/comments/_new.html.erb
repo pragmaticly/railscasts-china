@@ -1,0 +1,22 @@
+<div class="comment" id="new-comment">
+  <div class="pull-left avatar">
+    <%= gravatar_image_tag current_user.email, alt: current_user.name %>
+  </div>
+
+  <div class="container">
+    <div class="username">
+      <%= current_user.name %>
+    </div>
+
+    <div class="content">
+      <%= form_for @episode.comments.new, url: episode_comments_path(@episode) do |f| %>
+        <div>
+          <%= f.text_area :content, cols: 65, rows: 12 %>
+        </div>
+        <div>
+          <%= submit_tag "Post" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

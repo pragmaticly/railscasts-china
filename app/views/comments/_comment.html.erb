@@ -1,0 +1,15 @@
+<div class="comment">
+  <div class="pull-left avatar">
+    <%= gravatar_image_tag current_user.email, alt: current_user.name %>
+  </div>
+
+  <div class="container">
+    <div class="username">
+      <%= current_user.name %>
+    </div>
+
+    <div class="content">
+      <%= comment.content %>
+    </div>
+  </div>
+</div>
