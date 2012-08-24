@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', git: 'git://github.com/rails/rails.git'
 gem 'active_record_deprecated_finders', git: 'git://github.com/rails/active_record_deprecated_finders.git'
 gem 'strong_parameters'
-gem 'pg'
+gem 'mysql2'
 
 group :assets do
   gem 'sass-rails',  git: 'git://github.com/rails/sass-rails.git'
