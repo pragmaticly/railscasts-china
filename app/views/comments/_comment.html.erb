@@ -1,11 +1,11 @@
 <div class="comment">
   <div class="pull-left avatar">
-    <%= gravatar_image_tag current_user.email, alt: current_user.name %>
+    <%= gravatar_image_tag comment.user.email, alt: comment.user.name %>
   </div>
 
   <div class="container">
     <div class="username">
-      <%= current_user.name %>
+      <%= comment.user.name %>
     </div>
 
     <div class="content">
