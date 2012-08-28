@@ -2,13 +2,13 @@
   <article class="row episode">
     <aside class="screenshot">
       <a href="<%= episode_path(episode) %>">
-        <%= image_tag episode.still.url %>
+        <%= image_tag episode.still_url %>
       </a>
     </aside>
 
     <section class="content clearfix">
       <div class="info">
-        <span class="number">Episode #<%= episode.id %></span> –
+        <span class="number">Episode #<%= episode.padded_position %></span> –
         <span class="published_at">
           <%= time_tag(episode.published_at) %>
         </span> –

@@ -2,20 +2,21 @@
 #
 # Table name: episodes
 #
-#  id             :integer         not null, primary key
+#  id             :integer(4)      not null, primary key
 #  name           :string(255)
 #  permalink      :string(255)
 #  description    :text
 #  notes          :text
 #  published_at   :datetime
-#  seconds        :integer
+#  created_at     :datetime
+#  updated_at     :datetime
+#  position       :integer(4)      default(0)
+#  comments_count :integer(4)      default(0), not null
+#  seconds        :integer(4)
 #  file_sizes     :text
-#  created_at     :datetime        not null
-#  updated_at     :datetime        not null
-#  user_id        :integer
-#  comments_count :integer         default(0)
+#  publish        :boolean(1)      default(FALSE)
 #  still          :string(255)
-#  publish        :boolean
+#  user_id        :integer(4)      default(1)
 #
 
 class Episode < ActiveRecord::Base
@@ -34,6 +35,7 @@ class Episode < ActiveRecord::Base
   validates :description, presence: true
   validates :notes, presence: true
   validates :seconds, numericality: { greater_than: 0 }
+  validates :position, numericality: { greater_than: 0 }
 
   before_create :set_published_at
 
@@ -45,8 +47,21 @@ class Episode < ActiveRecord::Base
     permalink.to_s
   end
 
+  #TODO Put the host and url to setting file latter.
   def asset_url
-    "http://media.railscasts-china.com/assets/episodes/video/#{permalink}.mp4"
+    "http://screencasts.b0.upaiyun.com/assets/episodes/video/#{full_name}.mp4"
+  end
+
+  def still_url
+    still.url || "http://screencasts.b0.upaiyun.com/assets/episodes/stills/#{full_name}.png"
+  end
+
+  def padded_position
+    position.to_s.rjust(3, "0")
+  end
+
+  def full_name
+    "#{padded_position}-#{permalink}"
   end
 
   def minutes

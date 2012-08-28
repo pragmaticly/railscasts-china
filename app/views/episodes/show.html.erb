@@ -1,5 +1,5 @@
 <% content_for :head do %>
-  <%= meta_tag('episode-url', 'http://railscasts-china.com/assets/episodes/video/013-live-show-with-ye-dingding-1.mp4') %>
+  <%= meta_tag('episode-url', @episode.asset_url) %>
 
   <% if user_signed_in? %>
     <script type="text/javascript">
@@ -12,12 +12,12 @@
   <div class="content clearfix">
     <div class="screenshot">
       <a href="<%= episode_path(@episode) %>">
-        <%= image_tag @episode.still.url %>
+        <%= image_tag @episode.still_url %>
       </a>
     </div>
 
     <h3>
-      <span class="number">#<%= @episode.id %></span>
+      <span class="number">#<%= @episode.padded_position %></span>
       <a href="<%= episode_path(@episode) %>">
         <%= @episode.name %>
       </a>
