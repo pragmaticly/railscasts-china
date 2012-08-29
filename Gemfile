@@ -46,10 +46,6 @@ end
 group :development do
   gem "debugger"
   gem "guard", ">= 0.6.2"
-  group :darwin do
-    gem 'rb-fsevent'
-    gem 'growl'
-  end
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-livereload", ">= 0.3.0"
   gem "guard-rspec", ">= 0.4.3"

@@ -136,7 +136,6 @@ GEM
     foreman (0.47.0)
       thor (>= 0.13.6)
     gravatar_image_tag (1.1.2)
-    growl (1.0.3)
     guard (1.1.1)
       listen (>= 0.4.2)
       thor (>= 0.14.6)
@@ -302,7 +301,6 @@ DEPENDENCIES
   factory_girl_rails (>= 3.3.0)
   foreman
   gravatar_image_tag
-  growl
   guard (>= 0.6.2)
   guard-annotate
   guard-bundler (>= 0.1.3)
@@ -316,7 +314,6 @@ DEPENDENCIES
   puma
   rails!
   rails_best_practices
-  rb-fsevent
   redcarpet
   rspec-instafail
   rspec-rails (>= 2.10.1)
