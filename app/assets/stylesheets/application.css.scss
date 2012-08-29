@@ -89,3 +89,14 @@ header {
   text-align: center;
   margin-top: 40px;
 }
+
+.pagination {
+  margin: 8px 0;
+  font-size: 12px;
+  .current {
+    padding: 0 14px;
+    line-height: 34px;
+    float: left;
+    border: 1px solid #DDD;
+  }
+}
