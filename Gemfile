@@ -1,6 +1,6 @@
 require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
-source 'https://rubygems.org'
+source 'http://ruby.taobao.org'
 
 gem 'rails', git: 'git://github.com/rails/rails.git'
 gem 'active_record_deprecated_finders', git: 'git://github.com/rails/active_record_deprecated_finders.git'
