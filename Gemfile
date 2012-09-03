@@ -51,18 +51,18 @@ group :development do
   gem "guard-livereload", ">= 0.3.0"
   gem "guard-rspec", ">= 0.4.3"
 
-  case HOST_OS
-    when /darwin/i
+  #case HOST_OS
+  #  when /darwin/i
       gem 'rb-fsevent'
       gem 'growl'
-    when /linux/i
-      gem 'libnotify'
-      gem 'rb-inotify'
-    when /mswin|windows/i
-      gem 'rb-fchange'
-      gem 'win32console'
-      gem 'rb-notifu'
-  end
+  #  when /linux/i
+  #    gem 'libnotify'
+  #    gem 'rb-inotify'
+  #  when /mswin|windows/i
+  #    gem 'rb-fchange'
+  #    gem 'win32console'
+  #    gem 'rb-notifu'
+  # end
   gem "annotate", '~> 2.4.1.beta1'
   gem 'guard-annotate'
   gem "rails_best_practices"
