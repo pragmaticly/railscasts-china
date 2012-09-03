@@ -17,8 +17,8 @@ ActiveRecord::Schema.define(:version => 20120828193611) do
     t.integer  "episode_id"
     t.integer  "user_id"
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "ancestry"
   end
 
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(:version => 20120828193611) do
     t.datetime "published_at"
     t.integer  "seconds"
     t.text     "file_sizes"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "comments_count", :default => 0
     t.string   "still"
@@ -44,14 +44,14 @@ ActiveRecord::Schema.define(:version => 20120828193611) do
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "episode_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tags", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20120828193611) do
     t.string   "uid"
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.boolean  "admin"
   end
 
