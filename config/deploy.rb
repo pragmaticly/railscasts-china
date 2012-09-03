@@ -29,6 +29,7 @@ namespace :deploy do
   desc "symlink shared files"
   task :symlink_shared, :roles => :app do
     run "ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml"
+    run "mkdir -p #{release_path}/tmp/cache/assets"
     run "cd #{release_path}; RAILS_ENV=#{rails_env} rake assets:precompile"
   end
 
