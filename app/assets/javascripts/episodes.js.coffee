@@ -24,6 +24,12 @@ playControl = ->
     $("#jp_container_1").show()
     playVideo()
 
+   $('#jquery_jplayer_1').bind 'click', (e) ->
+    if $('.jp-play').is ':visible'
+      $(this).jPlayer('play') 
+    else
+      $(this).jPlayer('pause')
+
 $ ->
   playControl()
   if window.location.search.indexOf('autoplay=true') != -1
