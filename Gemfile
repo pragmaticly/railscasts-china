@@ -1,9 +1,10 @@
 require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
-source 'http://ruby.taobao.org'
+source 'http://rubygems.org'
 
 gem 'rails', git: 'git://github.com/rails/rails.git'
-gem 'active_record_deprecated_finders', git: 'git://github.com/rails/active_record_deprecated_finders.git'
+gem 'activerecord-deprecated_finders', git: 'git://github.com/rails/activerecord-deprecated_finders.git'
+gem 'journey', git: 'git://github.com/rails/journey.git'
 gem 'strong_parameters'
 gem 'mysql2'
 
@@ -49,6 +50,19 @@ group :development do
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-livereload", ">= 0.3.0"
   gem "guard-rspec", ">= 0.4.3"
+
+  #case HOST_OS
+  #  when /darwin/i
+      gem 'rb-fsevent'
+      gem 'growl'
+  #  when /linux/i
+  #    gem 'libnotify'
+  #    gem 'rb-inotify'
+  #  when /mswin|windows/i
+  #    gem 'rb-fchange'
+  #    gem 'win32console'
+  #    gem 'rb-notifu'
+  # end
   gem "annotate", '~> 2.4.1.beta1'
   gem 'guard-annotate'
   gem "rails_best_practices"
