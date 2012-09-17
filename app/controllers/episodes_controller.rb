@@ -4,6 +4,10 @@ class EpisodesController < ApplicationController
 
   def index
     @episodes = Episode.by_tag(params[:tag_id]).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.rss
+    end
   end
 
   def show

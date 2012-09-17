@@ -72,5 +72,14 @@ describe Episode do
         episode.tag_list.should == "test, rspec"
       end
     end
+
+    describe "#duration" do
+      let(:episode1) { create(:episode, seconds: 35)}
+      let(:episode2) { create(:episode, seconds: 700)}
+
+      it { episode1.duration.should == "0:35" }
+      it { episode2.duration.should == "11:40" }
+    end
+
   end
 end

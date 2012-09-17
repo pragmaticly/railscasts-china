@@ -68,6 +68,13 @@ class Episode < ActiveRecord::Base
     seconds / 60
   end
 
+  def duration
+    if seconds
+      min, sec = *seconds.divmod(60)
+      [min, sec.to_s.rjust(2, '0')].join(':')
+    end
+  end
+
   attr_accessor :tag_list
 
   def tag_list
