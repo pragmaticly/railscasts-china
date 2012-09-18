@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
   before_filter :fetch_episode
 
 
+  def index
+    @comments = Comment.all
+  end
+
   def create
     @comment = @episode.comments.create(episode_params.merge(user_id: current_user.id))
     respond_to do |format|
