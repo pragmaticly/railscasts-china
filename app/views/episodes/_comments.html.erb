@@ -1,7 +1,9 @@
 <%= render comments %>
 
-<% if user_signed_in? %>
-  <%= render "comments/new" %>
+<% if user_signed_in?%>
+  <% if @episode %>
+    <%= render "comments/new" %>
+  <% end %>
 <% else %>
   <a href="/signin">Login</a> to comment
 <% end %>
