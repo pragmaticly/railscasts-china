@@ -1,6 +1,7 @@
 RailscastsChina::Application.routes.draw do
   root :to => "episodes#index"
 
+  resources :comments
   resources :episodes do
     resources :comments
   end
