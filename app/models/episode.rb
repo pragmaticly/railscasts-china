@@ -37,9 +37,10 @@ class Episode < ActiveRecord::Base
   validates :seconds, numericality: { greater_than: 0 }
   validates :position, numericality: { greater_than: 0 }
 
+  before_validation :set_position
   before_create :set_published_at
 
-  default_scope -> { order('published_at DESC') }
+  default_scope -> { order('position DESC') }
 
   scope :by_tag, lambda{ |tag_name| joins(:tags).where("tags.name = ?", tag_name) unless tag_name.blank? }
 
@@ -94,5 +95,10 @@ class Episode < ActiveRecord::Base
   def set_published_at
     #TODO before add setting published_at, just make it the same with craeted_at
     self.published_at = self.created_at
+  end
+
+  def set_position
+    last_position = Episode.first.try(:position)
+    self.position = (last_position.nil? ? 0 : last_position)  + 1
   end
 end

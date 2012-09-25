@@ -1,3 +1,5 @@
+<%= @episode.errors.full_messages.first if @episode.errors.any? %>
+
 <div>
   <%= form_for @episode do |f| %>
     <div class="field">

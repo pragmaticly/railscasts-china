@@ -41,7 +41,7 @@ class EpisodesController < ApplicationController
 
   def episode_params
     params.require(:episode).permit(:name, :permalink, :notes, :description,
-                                    :still, :duration, :publish, :tag_list)
+                                    :still, :publish, :tag_list, :seconds)
   end
 
   def fetch_episode
