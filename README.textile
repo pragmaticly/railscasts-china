@@ -1,4 +1,4 @@
-h1. Railscasts China
+h1. Railscasts China !https://secure.travis-ci.org/blueplanet/railscasts-china.png(Build Status)!:http://travis-ci.org/blueplanet/railscasts-china
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 

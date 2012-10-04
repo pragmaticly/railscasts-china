@@ -9,7 +9,7 @@ describe ApplicationHelper do
 
   context "#time_tag" do
     it "should return time tag" do
-      time = Time.new(2012, 07, 27)
+      time = Time.new(2012, 07, 27, 0, 0, 0, "+08:00")
       helper.time_tag(time).should == %q!<time datetime="2012-07-27 00:00:00 +0800">July 27, 2012</time>!
     end
   end
