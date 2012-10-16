@@ -1,0 +1,15 @@
+bundler_args: --without development
+
+language: ruby
+rvm:
+  - "1.9.3"
+
+script: bundle exec rspec
+
+services:
+  - mysql
+
+before_script:
+  - cp config/database.yml.example config/database.yml
+  - mysql -e 'create database `railscasts-china_test`;'
+  - bundle exec rake db:migrate
