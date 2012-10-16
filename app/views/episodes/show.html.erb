@@ -39,7 +39,7 @@
 
     <div class="watch">
       <a class="btn btn-primary">Click to Play Video ▶</a>
-      <a class="btn btn-info" href="<%= @episode.asset_url %>">Download</a>
+      <a class="btn btn-info" href="<%= @episode.url_for_downloading %>">Download</a>
     </div>
 
     <%= render 'shared/player' %>

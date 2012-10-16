@@ -31,6 +31,16 @@
     </div>
 
     <div class="field">
+      <label for="duration">URL(当视频放在其他位置时，需要指定)</label>
+      <%= f.text_field :video_url %>
+    </div>
+
+    <div class="field">
+      <label for="duration">URL for download(如果在线播放和下载链接不同时请指定)</label>
+      <%= f.text_field :download_url %>
+    </div>
+
+    <div class="field">
       <label for="duration">Seconds</label>
       <%= f.text_field :seconds %>
     </div>

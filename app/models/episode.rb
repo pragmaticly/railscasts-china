@@ -17,6 +17,8 @@
 #  publish        :boolean(1)      default(FALSE)
 #  still          :string(255)
 #  user_id        :integer(4)      default(1)
+#  video_url      :string(255)
+#  download_url   :string(255)
 #
 
 class Episode < ActiveRecord::Base
@@ -50,6 +52,14 @@ class Episode < ActiveRecord::Base
 
   #TODO Put the host and url to setting file latter.
   def asset_url
+    video_url || default_url
+  end
+
+  def url_for_downloading
+    download_url || asset_url
+  end
+
+  def default_url
     "http://screencasts.b0.upaiyun.com/assets/episodes/video/#{full_name}.mp4"
   end
 
@@ -98,7 +108,9 @@ class Episode < ActiveRecord::Base
   end
 
   def set_position
-    last_position = Episode.first.try(:position)
-    self.position = (last_position.nil? ? 0 : last_position)  + 1
+    if position.nil?
+      last_position = Episode.first.try(:position)
+      self.position = (last_position.nil? ? 0 : last_position)  + 1
+    end
   end
 end

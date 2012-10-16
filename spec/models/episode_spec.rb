@@ -81,5 +81,29 @@ describe Episode do
       it { episode2.duration.should == "11:40" }
     end
 
+
+    describe "#set_position" do
+      attr_reader :episode
+      before do
+        @episode = FactoryGirl.create(:episode)
+      end
+
+      subject { episode }
+
+      its(:position) { should == 1 }
+
+      it {
+        episode.update_attributes(name: "Test")
+        episode.position.should == 1
+      }
+
+      it {
+        new_episode = FactoryGirl.create(:episode)
+        new_episode.position.should == 2
+      }
+
+
+    end
+
   end
 end
