@@ -108,7 +108,7 @@ class Episode < ActiveRecord::Base
   end
 
   def set_position
-    if position.nil?
+    if position == 0
       last_position = Episode.first.try(:position)
       self.position = (last_position.nil? ? 0 : last_position)  + 1
     end
