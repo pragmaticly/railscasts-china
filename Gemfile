@@ -26,7 +26,7 @@ gem "kaminari"
 gem "redcarpet"
 
 # Deploy with Capistrano
-gem 'capistrano'
+gem 'capistrano', "2.13.4"
 gem 'capistrano-ext'
 
 # File Uploading
