@@ -52,11 +52,11 @@ class Episode < ActiveRecord::Base
 
   #TODO Put the host and url to setting file latter.
   def asset_url
-    video_url || default_url
+    video_url.blank? ? default_url : video_url
   end
 
   def url_for_downloading
-    download_url || asset_url
+    download_url.blank? ? asset_url : download_url
   end
 
   def default_url
@@ -64,7 +64,7 @@ class Episode < ActiveRecord::Base
   end
 
   def still_url
-    still.url || "http://screencasts.b0.upaiyun.com/assets/episodes/stills/#{full_name}.png"
+    still.url.blank? ? "http://screencasts.b0.upaiyun.com/assets/episodes/stills/#{full_name}.png" : still.url
   end
 
   def padded_position
