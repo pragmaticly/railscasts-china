@@ -17,9 +17,9 @@ set :keep_releases, 5
 set :rails_env, "production"
 set :branch, "master"
 
-role :web, "119.254.35.211"                          # Your HTTP server, Apache/etc
-role :app, "119.254.35.211"                          # This may be the same as your `Web` server
-role :db,  "119.254.35.211", :primary => true # This is where Rails migrations will run
+role :web, "106.187.38.165"                          # Your HTTP server, Apache/etc
+role :app, "106.187.38.165"                          # This may be the same as your `Web` server
+role :db,  "1106.187.38.165", :primary => true # This is where Rails migrations will run
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
