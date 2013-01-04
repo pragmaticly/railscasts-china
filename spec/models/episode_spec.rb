@@ -44,6 +44,11 @@ describe Episode do
         specify { Episode.by_keywords(query).should include(episode) }
         specify { Episode.by_keywords(query).should include(episode2) }
       end
+
+      context "blank query" do
+        let(:query) { "" }
+        specify { Episode.by_keywords(query).count.should == 3 }
+      end
     end
   end
 
