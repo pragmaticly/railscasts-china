@@ -11,6 +11,8 @@ describe EpisodesController do
     before do
       Episode.stub(:by_tag).with("test").and_return(tagged_episodes)
       Episode.stub(:by_tag).with(nil).and_return(episodes)
+      tagged_episodes.stub(:by_keywords).and_return(tagged_episodes)
+      episodes.stub(:by_keywords).and_return(episodes)
       tagged_episodes.stub(:page).and_return(tagged_episodes)
       episodes.stub(:page).and_return(episodes)
     end

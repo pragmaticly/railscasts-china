@@ -8,7 +8,7 @@ FactoryGirl.define do
     description { "Description of Episode #{Episode.count+1}" }
     notes { "Notes of Episode #{Episode.count+1}" }
     published_at { Time.now }
-    seconds { rand(1200) }
+    seconds { rand(1200) + 1 }
     position 0
   end
 end

@@ -49,6 +49,12 @@ describe Episode do
         let(:query) { "" }
         specify { Episode.by_keywords(query).count.should == 3 }
       end
+
+      context "ignore cases" do
+        let(:query) { "IrrOnMaN" }
+        specify { Episode.by_keywords(query).count.should == 1 }
+        specify { Episode.by_keywords(query).should include(episode2) }
+      end
     end
   end
 
