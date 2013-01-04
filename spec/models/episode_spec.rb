@@ -25,6 +25,26 @@ describe Episode do
         Episode.by_tag(nil).count.should == 2
       end
     end
+
+    describe ".by_keywords" do
+      let!(:episode) { create(:episode, name: 'this is superman la' )}
+      let!(:episode2) { create(:episode, name: 'is that irronman') }
+      let!(:episode3) { create(:episode, name: 'xman') }
+
+
+      context "one keyword" do
+        let(:query) { "superman" }
+        specify { Episode.by_keywords(query).count.should == 1 }
+        specify { Episode.by_keywords(query).should include(episode) }
+      end
+
+      context "two keywords" do
+        let(:query) { "superman irronman"}
+        specify { Episode.by_keywords(query).count.should == 2 }
+        specify { Episode.by_keywords(query).should include(episode) }
+        specify { Episode.by_keywords(query).should include(episode2) }
+      end
+    end
   end
 
   describe "Instance Method" do
