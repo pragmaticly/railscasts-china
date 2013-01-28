@@ -3,7 +3,7 @@
 # Table name: episodes
 #
 #  id             :integer(4)      not null, primary key
-#  name           :string(255)
+#  name           :string(255)     not null
 #  permalink      :string(255)
 #  description    :text
 #  notes          :text
