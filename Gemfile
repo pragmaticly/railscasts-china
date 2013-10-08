@@ -2,15 +2,14 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'http://rubygems.org'
 
-gem 'rails', git: 'git://github.com/rails/rails.git'
+gem 'rails'
 gem 'activerecord-deprecated_finders', git: 'git://github.com/rails/activerecord-deprecated_finders.git'
 gem 'journey', git: 'git://github.com/rails/journey.git'
-gem 'strong_parameters'
 gem 'mysql2'
 
 group :assets do
-  gem 'sass-rails',  git: 'git://github.com/rails/sass-rails.git'
-  gem 'coffee-rails', git: 'git://github.com/rails/coffee-rails.git'
+  gem 'sass-rails'
+  gem 'coffee-rails'
   gem 'uglifier', '~> 1.2.4'
   gem 'execjs'
 end

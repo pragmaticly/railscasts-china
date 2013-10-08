@@ -18,7 +18,7 @@ describe Episode do
       end
 
       it "should filter the episode by tag_name" do
-        Episode.by_tag('activemodel').all.should == [@episode2]
+        Episode.by_tag('activemodel').to_a.should == [@episode2]
       end
 
       it "should return all records if tag_name is nil" do
