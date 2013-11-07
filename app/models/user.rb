@@ -19,14 +19,14 @@ class User < ActiveRecord::Base
 
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
-  validates :name, presence: true
+  validates :name
 
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth['provider']
       user.uid = auth['uid']
       if auth['info']
-         user.name = auth['info']['name'] || ""
+         user.name = auth['info']['name'] || auth['info']['email'].try(:split, '@').try(:first) || ""
          user.email = auth['info']['email'] || ""
       end
     end
