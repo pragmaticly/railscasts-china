@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
 
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }
-  validates :name
 
   def self.create_with_omniauth(auth)
     create! do |user|
