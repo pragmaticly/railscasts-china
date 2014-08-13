@@ -2,31 +2,28 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'http://rubygems.org'
 
-gem 'rails'
-gem 'activerecord-deprecated_finders', git: 'git://github.com/rails/activerecord-deprecated_finders.git'
-gem 'journey', git: 'git://github.com/rails/journey.git'
-gem 'mysql2'
+gem 'rails', '~> 4.0.8'
+gem 'activerecord-deprecated_finders', git: 'https://github.com/rails/activerecord-deprecated_finders.git'
+gem 'journey', git: 'https://github.com/rails/journey.git'
 
-group :assets do
-  gem 'sass-rails'
-  gem 'coffee-rails'
-  gem 'uglifier', '~> 1.2.4'
-  gem 'execjs'
-end
+# Gems used only for assets and not required
+# in production environments by default.
+gem 'sass-rails',   '~> 4.0'
+gem 'coffee-rails', '~> 4.0'
+
+# See https://github.com/sstephenson/execjs#readme for more supported runtimes
+# gem 'therubyracer', :platforms => :ruby
+
+gem 'uglifier', '~> 2.1', require: false
 
 gem 'jquery-rails'
 gem "omniauth", ">= 1.1.0"
 gem "omniauth-github"
 gem "bootstrap-sass", ">= 2.0.3"
 gem "airbrake"
-gem "puma"
 gem "coderay"
 gem "kaminari"
 gem "redcarpet"
-
-# Deploy with Capistrano
-gem 'capistrano', "2.13.4"
-gem 'capistrano-ext'
 
 # File Uploading
 gem 'carrierwave'
@@ -62,7 +59,7 @@ group :development do
   #    gem 'win32console'
   #    gem 'rb-notifu'
   # end
-  gem "annotate", '~> 2.4.1.beta1'
+  gem "annotate", '~> 2.6.5'
   gem 'guard-annotate'
   gem "rails_best_practices"
   gem 'foreman'
