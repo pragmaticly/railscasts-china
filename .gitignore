@@ -76,3 +76,5 @@ db/*.sqlite3
 
 # upload files
 /public/uploads/
+
+*.sublime-workspace
