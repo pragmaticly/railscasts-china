@@ -3,7 +3,7 @@
 	[
 		{
 			"path": ".",
-			"folder_exclude_patterns": [".bundle",".idea","tmp","log","public/assets"],
+			"folder_exclude_patterns": [".bundle",".idea","tmp","log","public/assets","coverage"],
 			"file_exclude_patterns": ["*.sublime-workspace","*.sqlite3"]
 		}
 	],
