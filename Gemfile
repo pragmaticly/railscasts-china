@@ -21,7 +21,7 @@ gem 'uglifier', '~> 2.1', require: false
 gem 'jquery-rails'
 gem "omniauth", ">= 1.1.0"
 gem "omniauth-github"
-gem "bootstrap-sass", ">= 2.0.3"
+gem "bootstrap-sass", ">= 2.3.2", "< 3.0"
 gem "airbrake"
 gem "coderay"
 gem "kaminari"
