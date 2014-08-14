@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016072523) do
+ActiveRecord::Schema.define(version: 20121016072523) do
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", force: true do |t|
     t.integer  "episode_id"
     t.integer  "user_id"
     t.text     "content"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(:version => 20121016072523) do
     t.string   "ancestry"
   end
 
-  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
 
-  create_table "episodes", :force => true do |t|
+  create_table "episodes", force: true do |t|
     t.string   "name"
     t.string   "permalink"
     t.text     "description"
@@ -35,28 +35,28 @@ ActiveRecord::Schema.define(:version => 20121016072523) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "comments_count", :default => 0
+    t.integer  "comments_count", default: 0
     t.string   "still"
     t.boolean  "publish"
-    t.integer  "position",       :default => 0
+    t.integer  "position",       default: 0
     t.string   "video_url"
     t.string   "download_url"
   end
 
-  create_table "taggings", :force => true do |t|
+  create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "episode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", :force => true do |t|
+  create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
