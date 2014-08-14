@@ -70,3 +70,5 @@ group :test do
   gem 'simplecov', :require => false
   gem 'turn', :require => false
 end
+
+gem 'hitimes'
