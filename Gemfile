@@ -43,6 +43,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'quiet_assets'
   gem "debugger"
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
