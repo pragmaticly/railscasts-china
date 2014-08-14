@@ -33,7 +33,7 @@ gem 'ancestry'
 gem 'gravatar_image_tag'
 
 group :development, :test do
-  gem "rspec-rails", ">= 2.10.1"
+  gem "rspec-rails", "~> 2.14.2", "< 2.99"
   gem "factory_girl_rails", ">= 3.3.0"
   gem "shoulda-matchers"
   gem "rspec-instafail"
