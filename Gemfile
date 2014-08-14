@@ -6,6 +6,8 @@ gem 'rails', '~> 4.0.8'
 gem 'activerecord-deprecated_finders', git: 'https://github.com/rails/activerecord-deprecated_finders.git'
 gem 'journey', git: 'https://github.com/rails/journey.git'
 
+gem 'sqlite3'
+
 # Gems used only for assets and not required
 # in production environments by default.
 gem 'sass-rails',   '~> 4.0'
