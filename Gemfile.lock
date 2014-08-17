@@ -272,6 +272,13 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     wdm (0.1.0)
+    win32-changenotify (0.6.1)
+      ffi
+      win32-event
+    win32-event (0.6.1)
+      win32-ipc (>= 0.6.0)
+    win32-ipc (0.6.1)
+      ffi
     win32console (1.3.2)
     win32console (1.3.2-x86-mingw32)
     xpath (2.0.0)
@@ -318,3 +325,5 @@ DEPENDENCIES
   tzinfo-data
   uglifier (~> 2.1)
   wdm (>= 0.1.0)
+  win32-changenotify
+  win32-event
