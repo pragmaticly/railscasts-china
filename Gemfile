@@ -2,7 +2,7 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'http://rubygems.org'
 
-gem 'rails', '~> 4.0.8'
+gem 'rails', '~> 4.1.4'
 gem 'activerecord-deprecated_finders', git: 'https://github.com/rails/activerecord-deprecated_finders.git'
 gem 'journey', git: 'https://github.com/rails/journey.git'
 
