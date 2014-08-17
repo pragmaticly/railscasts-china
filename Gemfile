@@ -49,7 +49,6 @@ group :development do
   #case HOST_OS
   #  when /darwin/i
       gem 'rb-fsevent'
-      gem 'growl'
   #  when /linux/i
   #    gem 'libnotify'
   #    gem 'rb-inotify'

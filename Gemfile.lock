@@ -92,7 +92,6 @@ GEM
     ffi (1.9.3-x86-mingw32)
     formatador (0.2.5)
     gravatar_image_tag (1.2.0)
-    growl (1.0.3)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -289,7 +288,6 @@ DEPENDENCIES
   email_spec (>= 1.2.1)
   factory_girl_rails (>= 3.3.0)
   gravatar_image_tag
-  growl
   guard (>= 0.6.2)
   guard-annotate
   guard-bundler (>= 0.1.3)
