@@ -1,6 +1,6 @@
 require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.4'
 gem 'sqlite3'
@@ -48,7 +48,8 @@ group :development do
 
   #case HOST_OS
   #  when /darwin/i
-      gem 'rb-fsevent'
+  #   gem 'rb-fsevent'
+  #   gem 'growl'
   #  when /linux/i
   #    gem 'libnotify'
   #    gem 'rb-inotify'
