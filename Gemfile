@@ -45,6 +45,7 @@ group :development do
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-livereload", ">= 0.3.0"
+  gem "rack-livereload"
   gem "guard-rspec", ">= 0.4.3"
 
   #case HOST_OS
@@ -73,3 +74,4 @@ gem 'hitimes'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem for Rails 4.1.0
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'wdm', '>= 0.1.0', platforms: [:mingw, :mswin]
