@@ -62,7 +62,6 @@ group :development do
   gem "annotate", '~> 2.6.5'
   gem 'guard-annotate'
   gem "rails_best_practices"
-  gem 'foreman'
 end
 
 group :test do
