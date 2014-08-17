@@ -44,13 +44,6 @@ group :development do
   gem "debugger"
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
-  gem "guard-livereload", ">= 0.3.0"
-  gem "rack-livereload"
-  platforms :mswin, :mingw do
-    gem 'wdm', '>= 0.1.0'
-    gem 'win32-changenotify'
-    gem 'win32-event'
-  end
   gem "guard-rspec", ">= 0.4.3"
 
   #case HOST_OS
