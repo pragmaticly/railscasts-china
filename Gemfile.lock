@@ -28,9 +28,6 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     addressable (2.3.6)
-    airbrake (4.0.0)
-      builder
-      multi_json
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     annotate (2.6.5)
@@ -281,7 +278,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  airbrake
   ancestry
   annotate (~> 2.6.5)
   bootstrap-sass (>= 2.3.2, < 3.0)

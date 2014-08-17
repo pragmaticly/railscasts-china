@@ -19,7 +19,6 @@ gem 'jquery-rails'
 gem "omniauth", ">= 1.1.0"
 gem "omniauth-github"
 gem "bootstrap-sass", ">= 2.3.2", "< 3.0"
-gem "airbrake"
 gem "coderay"
 gem "kaminari"
 gem "redcarpet"
