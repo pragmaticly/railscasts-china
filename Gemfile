@@ -75,3 +75,6 @@ group :test do
 end
 
 gem 'hitimes'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem for Rails 4.1.0
+gem 'tzinfo-data', platforms: [:mingw, :mswin]
