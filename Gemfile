@@ -67,7 +67,6 @@ end
 group :test do
   gem "email_spec", ">= 1.2.1"
   gem 'simplecov', :require => false
-  gem 'turn', :require => false
 end
 
 gem 'hitimes'

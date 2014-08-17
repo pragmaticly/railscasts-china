@@ -36,7 +36,6 @@ GEM
     annotate (2.6.5)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
-    ansi (1.4.3)
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     bootstrap-sass (2.3.2.2)
@@ -265,8 +264,6 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.9.7)
-      ansi
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     tzinfo-data (1.2014.6)
@@ -318,6 +315,5 @@ DEPENDENCIES
   shoulda-matchers
   simplecov
   sqlite3
-  turn
   tzinfo-data
   uglifier (~> 2.1)
