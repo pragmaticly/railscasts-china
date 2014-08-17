@@ -45,6 +45,6 @@ class EpisodesController < ApplicationController
   end
 
   def fetch_episode
-    @episode ||= Episode.find_by_permalink(params[:id])
+    @episode ||= Episode.find_by(permalink: params[:id])
   end
 end

@@ -5,7 +5,7 @@ describe CommentsController do
   let(:user) { double(:user) }
 
   before do
-    Episode.stub(:find_by_permalink).and_return(episode)
+    Episode.stub(:find_by).and_return(episode)
     controller.stub(:current_user).and_return(user)
   end
 

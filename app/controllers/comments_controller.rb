@@ -34,6 +34,6 @@ class CommentsController < ApplicationController
   end
 
   def fetch_episode
-    @episode = Episode.find_by_permalink(params[:episode_id])
+    @episode = Episode.find_by(permalink: params[:episode_id])
   end
 end

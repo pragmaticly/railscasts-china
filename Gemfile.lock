@@ -4,12 +4,6 @@ GIT
   specs:
     journey (2.0.0.20120723141804)
 
-GIT
-  remote: https://github.com/rails/activerecord-deprecated_finders.git
-  revision: 9068cadb719039bdda5690aab6d2e6db6bc1b970
-  specs:
-    activerecord-deprecated_finders (1.0.3)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -302,7 +296,6 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  activerecord-deprecated_finders!
   airbrake
   ancestry
   annotate (~> 2.6.5)
