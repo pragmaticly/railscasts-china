@@ -22,8 +22,7 @@ class CommentsController < ApplicationController
   def update
   end
 
-  private
-
+private
   def episode_params
     ep = params.require(:comment).permit(:content, :parent_id)
     parent_id = ep.delete(:parent_id)

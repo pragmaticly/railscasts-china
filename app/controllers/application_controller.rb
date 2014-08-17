@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :user_signed_in?
   helper_method :correct_user?
 
-  private
-
+private
   def admin_required
     if !current_user.try(:admin?)
       redirect_to root_url, alert: "Contact us for access to this page."

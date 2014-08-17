@@ -37,8 +37,7 @@ class EpisodesController < ApplicationController
     end
   end
 
-  private
-
+private
   def episode_params
     params.require(:episode).permit(:name, :permalink, :notes, :description,
                                     :still, :publish, :tag_list, :seconds, :video_url, :download_url)

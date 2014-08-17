@@ -44,8 +44,8 @@ class Episode < ActiveRecord::Base
 
   default_scope -> { order('position DESC') }
 
-  scope :by_tag, lambda{ |tag_name| joins(:tags).where("tags.name = ?", tag_name) unless tag_name.blank? }
-  scope :by_keywords, lambda { |keywords|  where("episodes.name REGEXP ?", "#{keywords.split(" ").join('|')}") unless keywords.blank? }
+  scope :by_tag, -> (tag_name) { joins(:tags).where("tags.name = ?", tag_name) unless tag_name.blank? }
+  scope :by_keywords, -> (keywords) { where("episodes.name REGEXP ?", "#{keywords.split(" ").join('|')}") unless keywords.blank? }
   scope :published, -> { where(publish: true) }
 
   def to_param
