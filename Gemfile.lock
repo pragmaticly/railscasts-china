@@ -1,9 +1,3 @@
-GIT
-  remote: https://github.com/rails/journey.git
-  revision: 965b28753bccb9b9931ed8a5d536d34b6bbbf110
-  specs:
-    journey (2.0.0.20120723141804)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -316,7 +310,6 @@ DEPENDENCIES
   guard-livereload (>= 0.3.0)
   guard-rspec (>= 0.4.3)
   hitimes
-  journey!
   jquery-rails
   kaminari
   omniauth (>= 1.1.0)

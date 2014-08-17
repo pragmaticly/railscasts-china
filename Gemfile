@@ -3,8 +3,6 @@ HOST_OS = RbConfig::CONFIG['host_os']
 source 'http://rubygems.org'
 
 gem 'rails', '~> 4.1.4'
-gem 'journey', git: 'https://github.com/rails/journey.git'
-
 gem 'sqlite3'
 
 # Gems used only for assets and not required
