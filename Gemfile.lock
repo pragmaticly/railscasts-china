@@ -291,7 +291,7 @@ DEPENDENCIES
   omniauth (>= 1.1.0)
   omniauth-github
   quiet_assets
-  rails (~> 4.1.4)
+  rails (~> 4.1.5)
   rails_best_practices
   redcarpet
   rspec-instafail
