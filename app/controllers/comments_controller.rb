@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   respond_to :html, :json
-  before_filter :authenticate_user!
-  before_filter :fetch_episode
+  before_action :authenticate_user!
+  before_action :fetch_episode
 
 
   def index

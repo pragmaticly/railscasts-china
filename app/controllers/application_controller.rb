@@ -31,5 +31,4 @@ private
       redirect_to root_url, :alert => 'You need to sign in for access to this page.'
     end
   end
-
 end
