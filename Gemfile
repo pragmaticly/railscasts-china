@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 4.1.5'
 gem 'sqlite3'
 gem 'sqlite3_ar_regexp', '~> 2.0'
-gem 'mysql2'
+# gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
