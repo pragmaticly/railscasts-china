@@ -19,15 +19,3 @@ guard 'rspec' do
   # Capybara request specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})          { |m| "spec/requests/#{m[1]}_spec.rb" }
 end
-
-guard 'annotate' do
-  watch( 'db/schema.rb' )
-
-  # Uncomment the following line if you also want to run annotate anytime
-  # a model file changes
-  #watch( 'app/models/**/*.rb' )
-
-  # Uncomment the following line if you are running routes annotation
-  # with the ":routes => true" option
-  #watch( 'config/routes.rb' )
-end

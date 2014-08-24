@@ -59,7 +59,6 @@ group :development do
   #    gem 'rb-notifu'
   # end
   gem "annotate", '~> 2.6.5'
-  gem 'guard-annotate'
   gem "rails_best_practices"
 end
 
