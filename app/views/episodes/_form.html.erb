@@ -55,6 +55,11 @@
       <%= f.text_field :tag_list, placeholder: 'Seperated by comma' %>
     </div>
 
+    <div class="field">
+      <label for="publish">Election</label>
+      <%= f.select :election_id, options_for_select(Election.pluck(:name, :id), @episode.election_id), { include_blank: true } %>
+    </div>
+
     <%= f.submit %>
 
 
