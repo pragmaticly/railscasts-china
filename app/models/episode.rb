@@ -19,6 +19,7 @@
 #  user_id        :integer(4)      default(1)
 #  video_url      :string(255)
 #  download_url   :string(255)
+#  election_id    :integer
 #
 
 class Episode < ActiveRecord::Base
@@ -31,6 +32,7 @@ class Episode < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
   belongs_to :user
+  belongs_to :election
 
   validates :name, presence: true
   validates :permalink, presence: true
