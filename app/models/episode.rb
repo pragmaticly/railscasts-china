@@ -20,6 +20,7 @@
 #  video_url      :string(255)
 #  download_url   :string(255)
 #  election_id    :integer
+#  votes_count    :integer          default(0)
 #
 
 class Episode < ActiveRecord::Base
@@ -31,6 +32,7 @@ class Episode < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :votes
   belongs_to :user
   belongs_to :election
 

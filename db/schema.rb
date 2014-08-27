@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824141502) do
+ActiveRecord::Schema.define(version: 20140827212443) do
 
   create_table "comments", force: true do |t|
     t.integer  "episode_id"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20140824141502) do
     t.string   "video_url"
     t.string   "download_url"
     t.integer  "election_id"
+    t.integer  "votes_count",    default: 0
   end
 
   create_table "taggings", force: true do |t|
@@ -72,6 +73,13 @@ ActiveRecord::Schema.define(version: 20140824141502) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "episode_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
