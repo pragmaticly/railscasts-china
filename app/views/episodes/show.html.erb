@@ -62,7 +62,7 @@
 
 <% if @episode.election.present? -%>
       <div class="tab-pane" id="election">
-        <%= render partial: "election", locals: { election: @episode.election } %>
+        <%= render @vote, locals: { election: @episode.election } %>
       </div>
 <% end -%>
       <div class="tab-pane" id="comments">

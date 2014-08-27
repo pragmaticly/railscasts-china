@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [ :show, :edit, :update ]
+  resources :votes, only: [ :create, :destroy ]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
