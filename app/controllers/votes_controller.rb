@@ -4,7 +4,7 @@ class VotesController < ApplicationController
 
   def create
     @episode = Episode.find(votes_params[:episode_id])
-    @episode.votes.create(votes_params.merge(user_id: current_user.id))
+    @episode.votes.create(votes_params.merge(user_id: current_user.id, election_id: @episode.election_id))
     respond_to do |format|
       format.html { redirect_to @episode, notice: 'Vote successful!' }
       format.json
