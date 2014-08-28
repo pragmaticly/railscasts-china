@@ -48,7 +48,7 @@
   <div class="tabbable">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#notes" data-toggle="tab">Notes</a></li>
-<% if @episode.election.present? -%>
+<% if @episode.election.present? and current_user.present? -%>
       <li><a href="#election" data-toggle="tab"><%= @episode.election.name %> voting</a></li>
 <% end -%>
       <li><a href="#comments" data-toggle="tab"><%= @episode.comments_count %> Comments</a></li>
@@ -60,7 +60,7 @@
         <%= textilize @episode.notes %>
       </div>
 
-<% if @episode.election.present? -%>
+<% if @episode.election.present? and current_user.present? -%>
       <div class="tab-pane" id="election">
         <%= render @vote, locals: { election: @episode.election } %>
       </div>

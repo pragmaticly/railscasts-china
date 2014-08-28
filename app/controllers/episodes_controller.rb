@@ -11,7 +11,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
-    @vote = @episode.votes.find_or_initialize_by(user_id: current_user.id)
+    @vote = @episode.votes.find_or_initialize_by(user_id: current_user.id) if current_user.present?
   end
 
   def edit
