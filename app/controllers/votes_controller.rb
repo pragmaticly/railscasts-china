@@ -11,6 +11,13 @@ class VotesController < ApplicationController
     end
   end
 
+  def destroy
+    @episode = Episode.find(votes_params[:episode_id])
+    Vote.find(params[:id]).destroy
+    redirect_to @episode, notice: 'Unvote successful'
+  end
+
+
 private
   def votes_params
     params.require(:vote).permit(:episode_id)
