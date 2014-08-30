@@ -41,6 +41,11 @@ group :development, :test do
 end
 
 group :development do
+  # Use Capistrano for deployment
+  gem 'capistrano', '~> 3.2'
+  gem 'capistrano-rvm', '~> 0.1'
+  gem 'capistrano-rails', '~> 1.1'
+
   gem 'quiet_assets'
   gem "debugger"
   gem "guard", ">= 0.6.2"
