@@ -6,6 +6,12 @@ rvm:
 
 script: bundle exec rspec
 
+install:
+  - "travis_retry bundle config build.nokogiri --use-system-libraries"
+
 before_script:
   - cp config/database.yml.example config/database.yml
   - bundle exec rake db:migrate
+
+git:
+  depth: 10
