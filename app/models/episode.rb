@@ -21,6 +21,8 @@
 #  download_url   :string(255)
 #  election_id    :integer
 #  votes_count    :integer          default(0)
+#  allow_download :boolean
+#  allow_comment  :boolean
 #
 
 class Episode < ActiveRecord::Base

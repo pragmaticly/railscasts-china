@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140828011023) do
+ActiveRecord::Schema.define(version: 20140906232938) do
 
   create_table "comments", force: true do |t|
     t.integer  "episode_id"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20140828011023) do
     t.string   "download_url"
     t.integer  "election_id"
     t.integer  "votes_count",    default: 0
+    t.boolean  "allow_download"
+    t.boolean  "allow_comment"
   end
 
   create_table "taggings", force: true do |t|

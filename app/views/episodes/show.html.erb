@@ -39,7 +39,9 @@
 
     <div class="watch">
       <a class="btn btn-primary">Click to Play Video ▶</a>
+<% if @episode.allow_download? -%>
       <a class="btn btn-info" href="<%= @episode.url_for_downloading %>">Download</a>
+<% end -%>
     </div>
 
     <%= render 'shared/player' %>
@@ -51,7 +53,9 @@
 <% if @episode.election.present? and current_user.present? -%>
       <li><a href="#election" data-toggle="tab"><%= @episode.election.name %> voting</a></li>
 <% end -%>
+<% if @episode.allow_comment? -%>
       <li><a href="#comments" data-toggle="tab"><%= @episode.comments_count %> Comments</a></li>
+<% end -%>
       <li><a href="#similar" data-toggle="tab">Similar Episodes</a></li>
     </ul>
 
@@ -65,10 +69,11 @@
         <%= render @vote, locals: { election: @episode.election } %>
       </div>
 <% end -%>
+<% if @episode.allow_comment? -%>
       <div class="tab-pane" id="comments">
         <%= render partial: "comments", locals: { comments: @episode.comments } %>
       </div>
-
+<% end -%>
       <div class="tab-pane" id="similar">
         Similar Episodes
       </div>
