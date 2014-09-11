@@ -39,7 +39,9 @@
 
     <div class="watch">
       <a class="btn btn-primary">Click to Play Video ▶</a>
+<% if @episode.allow_download? -%>
       <a class="btn btn-info" href="<%= @episode.url_for_downloading %>">Download</a>
+<% end -%>
     </div>
 
     <%= render 'shared/player' %>
@@ -48,7 +50,12 @@
   <div class="tabbable">
     <ul class="nav nav-tabs">
       <li class="active"><a href="#notes" data-toggle="tab">Notes</a></li>
+<% if @episode.election.present? and current_user.present? -%>
+      <li><a href="#election" data-toggle="tab"><%= @episode.election.name %> voting</a></li>
+<% end -%>
+<% if @episode.allow_comment? -%>
       <li><a href="#comments" data-toggle="tab"><%= @episode.comments_count %> Comments</a></li>
+<% end -%>
       <li><a href="#similar" data-toggle="tab">Similar Episodes</a></li>
     </ul>
 
@@ -57,19 +64,19 @@
         <%= textilize @episode.notes %>
       </div>
 
+<% if @episode.election.present? and current_user.present? -%>
+      <div class="tab-pane" id="election">
+        <%= render @vote, locals: { election: @episode.election } %>
+      </div>
+<% end -%>
+<% if @episode.allow_comment? -%>
       <div class="tab-pane" id="comments">
         <%= render partial: "comments", locals: { comments: @episode.comments } %>
       </div>
-
+<% end -%>
       <div class="tab-pane" id="similar">
         Similar Episodes
       </div>
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  $(function() {
-    var rccn = new Rccn;
-  });
-</script>

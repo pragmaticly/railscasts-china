@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   respond_to :html, :json
-  before_filter :authenticate_user!
-  before_filter :fetch_episode
+  before_action :authenticate_user!
+  before_action :fetch_episode
 
 
   def index
@@ -22,8 +22,7 @@ class CommentsController < ApplicationController
   def update
   end
 
-  private
-
+private
   def episode_params
     ep = params.require(:comment).permit(:content, :parent_id)
     parent_id = ep.delete(:parent_id)
@@ -34,6 +33,6 @@ class CommentsController < ApplicationController
   end
 
   def fetch_episode
-    @episode = Episode.find_by_permalink(params[:episode_id])
+    @episode = Episode.find_by(permalink: params[:episode_id])
   end
 end

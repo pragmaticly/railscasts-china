@@ -16,6 +16,7 @@
 class User < ActiveRecord::Base
 
   has_many :episodes
+  has_many :votes
 
   validates :provider, presence: true
   validates :uid, presence: true, uniqueness: { scope: :provider }

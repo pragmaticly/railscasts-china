@@ -81,7 +81,7 @@ describe EpisodesController do
       let(:episode) { double(:episode, class: Episode) }
 
       before do
-        Episode.stub(:find_by_permalink).and_return(episode)
+        Episode.stub(:find_by).and_return(episode)
       end
 
       it "should show the edit form" do
@@ -96,7 +96,7 @@ describe EpisodesController do
       let(:episode) { double(:episode, class: Episode) }
 
       before do
-        Episode.stub(:find_by_permalink).and_return(episode)
+        Episode.stub(:find_by).and_return(episode)
       end
 
       it "should update the episode" do

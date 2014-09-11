@@ -1,0 +1,11 @@
+<% if @vote.new_record? -%>
+  <%= form_for @vote do |f| %>
+    <%= f.hidden_field :episode_id %>
+    <%= f.submit 'Vote' %>
+  <% end %>
+<% else -%>
+  <%= form_for @vote, :html => { :method => :delete } do |f| %>
+    <%= f.hidden_field :episode_id %>
+    <%= f.submit 'Unvote' %>
+  <% end %>
+<% end -%>

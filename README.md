@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/Eric-Guo/railscasts-china.png?branch=master)](http://travis-ci.org/Eric-Guo/railscasts-china)
+
 TODO: Write the real README and follow the principle
 
 1. Explain why your code exists.

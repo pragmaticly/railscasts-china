@@ -2,14 +2,17 @@ bundler_args: --without development
 
 language: ruby
 rvm:
-  - "1.9.3"
+  - "2.0.0"
 
 script: bundle exec rspec
 
-services:
-  - mysql
+install:
+  - "travis_retry bundle config build.nokogiri --use-system-libraries"
+  - "travis_retry bundle install --retry 3"
 
 before_script:
   - cp config/database.yml.example config/database.yml
-  - mysql -e 'create database `railscasts-china_test`;'
   - bundle exec rake db:migrate
+
+git:
+  depth: 10

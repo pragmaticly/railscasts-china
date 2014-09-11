@@ -1,6 +1,6 @@
 class EpisodesController < ApplicationController
-  before_filter :admin_required, only: [:new, :create, :edit, :update]
-  before_filter :fetch_episode, only: [:show, :edit, :update]
+  before_action :admin_required, only: [:new, :create, :edit, :update]
+  before_action :fetch_episode, only: [:show, :edit, :update]
 
   def index
     @episodes = Episode.published.by_tag(params[:tag_id]).by_keywords(params[:query]).page(params[:page])
@@ -11,6 +11,7 @@ class EpisodesController < ApplicationController
   end
 
   def show
+    @vote = @episode.votes.find_or_initialize_by(user_id: current_user.id) if current_user.present?
   end
 
   def edit
@@ -37,14 +38,14 @@ class EpisodesController < ApplicationController
     end
   end
 
-  private
-
+private
   def episode_params
     params.require(:episode).permit(:name, :permalink, :notes, :description,
-                                    :still, :publish, :tag_list, :seconds, :video_url, :download_url)
+                                    :still, :publish, :tag_list, :seconds, :video_url, :download_url, :election_id,
+                                    :allow_download, :allow_comment)
   end
 
   def fetch_episode
-    @episode ||= Episode.find_by_permalink(params[:id])
+    @episode ||= Episode.find_by(permalink: params[:id])
   end
 end

@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016072523) do
+ActiveRecord::Schema.define(version: 20140906232938) do
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", force: true do |t|
     t.integer  "episode_id"
     t.integer  "user_id"
     t.text     "content"
@@ -22,9 +22,16 @@ ActiveRecord::Schema.define(:version => 20121016072523) do
     t.string   "ancestry"
   end
 
-  add_index "comments", ["ancestry"], :name => "index_comments_on_ancestry"
+  add_index "comments", ["ancestry"], name: "index_comments_on_ancestry"
 
-  create_table "episodes", :force => true do |t|
+  create_table "elections", force: true do |t|
+    t.string   "name",                      null: false
+    t.integer  "max_allowed_vote_per_user"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "episodes", force: true do |t|
     t.string   "name"
     t.string   "permalink"
     t.text     "description"
@@ -35,28 +42,32 @@ ActiveRecord::Schema.define(:version => 20121016072523) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "comments_count", :default => 0
+    t.integer  "comments_count", default: 0
     t.string   "still"
     t.boolean  "publish"
-    t.integer  "position",       :default => 0
+    t.integer  "position",       default: 0
     t.string   "video_url"
     t.string   "download_url"
+    t.integer  "election_id"
+    t.integer  "votes_count",    default: 0
+    t.boolean  "allow_download"
+    t.boolean  "allow_comment"
   end
 
-  create_table "taggings", :force => true do |t|
+  create_table "taggings", force: true do |t|
     t.integer  "tag_id"
     t.integer  "episode_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", :force => true do |t|
+  create_table "tags", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: true do |t|
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
@@ -64,6 +75,14 @@ ActiveRecord::Schema.define(:version => 20121016072523) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+  end
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "episode_id",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "election_id"
   end
 
 end

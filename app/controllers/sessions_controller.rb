@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
 
   def new
     redirect_to '/auth/github'
@@ -21,5 +22,4 @@ class SessionsController < ApplicationController
   def failure
     redirect_to root_url, :alert => "Authentication error: #{params[:message].humanize}"
   end
-
 end

@@ -46,6 +46,16 @@
     </div>
 
     <div class="field">
+      <label for="allow_download">Allow download</label>
+      <%= f.check_box :allow_download %>
+    </div>
+
+    <div class="field">
+      <label for="allow_comment">Allow comment</label>
+      <%= f.check_box :allow_comment %>
+    </div>
+
+    <div class="field">
       <label for="publish">Publish</label>
       <%= f.check_box :publish %>
     </div>
@@ -53,6 +63,11 @@
     <div class="field">
       <label for="publish">Tags</label>
       <%= f.text_field :tag_list, placeholder: 'Seperated by comma' %>
+    </div>
+
+    <div class="field">
+      <label for="publish">Election</label>
+      <%= f.select :election_id, options_for_select(Election.pluck(:name, :id), @episode.election_id), { include_blank: true } %>
     </div>
 
     <%= f.submit %>

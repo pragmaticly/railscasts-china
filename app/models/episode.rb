@@ -19,6 +19,10 @@
 #  user_id        :integer(4)      default(1)
 #  video_url      :string(255)
 #  download_url   :string(255)
+#  election_id    :integer
+#  votes_count    :integer          default(0)
+#  allow_download :boolean
+#  allow_comment  :boolean
 #
 
 class Episode < ActiveRecord::Base
@@ -30,7 +34,9 @@ class Episode < ActiveRecord::Base
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
+  has_many :votes
   belongs_to :user
+  belongs_to :election
 
   validates :name, presence: true
   validates :permalink, presence: true
@@ -44,8 +50,8 @@ class Episode < ActiveRecord::Base
 
   default_scope -> { order('position DESC') }
 
-  scope :by_tag, lambda{ |tag_name| joins(:tags).where("tags.name = ?", tag_name) unless tag_name.blank? }
-  scope :by_keywords, lambda { |keywords|  where("episodes.name REGEXP ?", "#{keywords.split(" ").join('|')}") unless keywords.blank? }
+  scope :by_tag, -> (tag_name) { joins(:tags).where("tags.name = ?", tag_name) unless tag_name.blank? }
+  scope :by_keywords, -> (keywords) { where("episodes.name REGEXP ?", "#{keywords.split(" ").join('|')}") unless keywords.blank? }
   scope :published, -> { where(publish: true) }
 
   def to_param

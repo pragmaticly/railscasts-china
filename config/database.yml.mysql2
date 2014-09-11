@@ -1,0 +1,20 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: railscasts-china_development
+  pool: 15
+  username: root
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  database: railscasts-china_test
+  pool: 15
+  username: root
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  database: railscasts-china_production
+  pool: 5
+  username: root
