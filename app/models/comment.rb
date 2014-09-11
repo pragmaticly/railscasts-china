@@ -2,13 +2,17 @@
 #
 # Table name: comments
 #
-#  id         :integer         not null, primary key
+#  id         :integer          not null, primary key
 #  episode_id :integer
 #  user_id    :integer
-#  content    :text            not null
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
+#  content    :text
+#  created_at :datetime
+#  updated_at :datetime
 #  ancestry   :string(255)
+#
+# Indexes
+#
+#  index_comments_on_ancestry  (ancestry)
 #
 
 class Comment < ActiveRecord::Base

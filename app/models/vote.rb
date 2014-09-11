@@ -2,11 +2,11 @@
 #
 # Table name: votes
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  episode_id :integer          not null
-#  created_at :datetime
-#  updated_at :datetime
+#  id          :integer          not null, primary key
+#  user_id     :integer          not null
+#  episode_id  :integer          not null
+#  created_at  :datetime
+#  updated_at  :datetime
 #  election_id :integer
 #
 

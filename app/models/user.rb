@@ -2,15 +2,14 @@
 #
 # Table name: users
 #
-#  id         :integer(4)      not null, primary key
-#  token      :string(255)
+#  id         :integer          not null, primary key
+#  provider   :string(255)
+#  uid        :string(255)
 #  name       :string(255)
 #  email      :string(255)
-#  admin      :boolean(1)
 #  created_at :datetime
 #  updated_at :datetime
-#  uid        :string(255)
-#  provider   :string(255)
+#  admin      :boolean
 #
 
 class User < ActiveRecord::Base

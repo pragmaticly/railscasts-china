@@ -2,21 +2,21 @@
 #
 # Table name: episodes
 #
-#  id             :integer(4)      not null, primary key
-#  name           :string(255)     not null
+#  id             :integer          not null, primary key
+#  name           :string(255)
 #  permalink      :string(255)
 #  description    :text
 #  notes          :text
 #  published_at   :datetime
+#  seconds        :integer
+#  file_sizes     :text
 #  created_at     :datetime
 #  updated_at     :datetime
-#  position       :integer(4)      default(0)
-#  comments_count :integer(4)      default(0), not null
-#  seconds        :integer(4)
-#  file_sizes     :text
-#  publish        :boolean(1)      default(FALSE)
+#  user_id        :integer
+#  comments_count :integer          default(0)
 #  still          :string(255)
-#  user_id        :integer(4)      default(1)
+#  publish        :boolean
+#  position       :integer          default(0)
 #  video_url      :string(255)
 #  download_url   :string(255)
 #  election_id    :integer

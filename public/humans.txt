@@ -3,13 +3,13 @@
 
 
 /* TEAM */
-  Co-Founder of Pragmatic.ly: Dingding Ye
-  Site: https://pragmatic.ly
+  Co-Founder of Fengche.co: Dingding Ye
+  Site: https://fengche.co
   Twitter: @yedingding
   Location: Hangzhou, China
 
-  Co-Founder of Pragmatic.ly: Terry Tai
-  Site: https://pragmatic.ly
+  Co-Founder of Fengche.co: Terry Tai
+  Site: https://fengche.co
   Twitter: @poshboytl
   Location: Chengdu, China
 
