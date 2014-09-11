@@ -1,4 +1,4 @@
-set :rvm_type, :system
+#set :rvm_type, :system
 
 # Simple Role Syntax
 # ==================
@@ -6,19 +6,18 @@ set :rvm_type, :system
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app, %w{cast@cast.sandisk.com}
-role :web, %w{cast@cast.sandisk.com}
-role :db,  %w{cast@cast.sandisk.com}
+role :app, %w{railscasts-china.com}
+role :web, %w{railscasts-china.com}
+role :db,  %w{railscasts-china.com}
 
+server 'railscasts-china.com', user: 'deploy', roles: %w{web},
+  ssh_options: {forward_agent: true}
 
 # Extended Server Syntax
 # ======================
 # This can be used to drop a more detailed server definition into the
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
-
-server 'cast.sandisk.com', user: 'cast', roles: %w{web},
-  ssh_options: {forward_agent: false, auth_methods: %w(password), password: 'castps5d'}
 
 # Custom SSH Options
 # ==================

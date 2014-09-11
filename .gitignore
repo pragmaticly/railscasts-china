@@ -77,3 +77,5 @@ db/*.sqlite3
 /public/uploads/
 
 *.sublime-workspace
+
+config/database.yml

@@ -1,14 +1,18 @@
 # config valid only for Capistrano 3.1
 lock '~> 3.2.1'
 
-set :application, 'cast'
-set :repo_url, 'https://github.com/Eric-Guo/railscasts-china'
+set :application, "railscasts-china"
+set :repo_url,  "git://github.com/pragmaticly/railscasts-china.git"
+
+set :scm, :git
+# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :deploy_via, :remote_cache
+set :deploy_to, "/var/www/railscasts-china"
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/home/cast'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -23,9 +27,10 @@ set :deploy_to, '/home/cast'
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml}
 
 # Default value for linked_dirs is []
+set :linked_dirs, %w{public/uploads tmp/pids}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
@@ -42,7 +47,7 @@ namespace :deploy do
       # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
       execute :cp, release_path.join('vendor/assets/javascripts/*.swf'), release_path.join('public/assets/')
-      execute :curl, '-s -D - cast.sandisk.com -o /dev/null'
+      #execute :curl, '-s -D - cast.sandisk.com -o /dev/null'
     end
   end
 

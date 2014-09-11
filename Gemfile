@@ -3,9 +3,7 @@ HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.5'
-gem 'sqlite3'
-gem 'sqlite3_ar_regexp', '~> 2.0'
-# gem 'mysql2'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -43,7 +41,6 @@ end
 group :development do
   # Use Capistrano for deployment
   gem 'capistrano', '~> 3.2'
-  gem 'capistrano-rvm', '~> 0.1'
   gem 'capistrano-rails', '~> 1.1'
 
   gem 'quiet_assets'
