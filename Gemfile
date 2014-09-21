@@ -44,7 +44,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
 
   gem 'quiet_assets'
-  gem "debugger"
+  gem "byebug"
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-rspec", ">= 0.4.3"
