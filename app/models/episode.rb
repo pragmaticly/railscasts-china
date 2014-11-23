@@ -39,7 +39,7 @@ class Episode < ActiveRecord::Base
   belongs_to :election
 
   validates :name, presence: true
-  validates :permalink, presence: true
+  validates :permalink, presence: true, uniqueness: true
   validates :description, presence: true
   validates :notes, presence: true
   validates :seconds, numericality: { greater_than: 0 }

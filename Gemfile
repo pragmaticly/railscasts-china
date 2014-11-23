@@ -2,7 +2,7 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.5'
+gem 'rails', '~> 4.1.8'
 gem 'mysql2'
 
 # Gems used only for assets and not required
@@ -44,7 +44,7 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
 
   gem 'quiet_assets'
-  gem "debugger"
+  gem "byebug"
   gem "guard", ">= 0.6.2"
   gem "guard-bundler", ">= 0.1.3"
   gem "guard-rspec", ">= 0.4.3"
