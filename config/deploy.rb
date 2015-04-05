@@ -1,4 +1,4 @@
-lock '~> 3.3.3'
+lock '~> 3.4.0'
 
 set :application, "railscasts-china"
 set :repo_url,  "git://github.com/pragmaticly/railscasts-china.git"
