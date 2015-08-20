@@ -3,7 +3,7 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.11'
+gem 'rails', '~> 4.1.12'
 gem 'mysql2'
 
 # Gems used only for assets and not required
@@ -48,7 +48,7 @@ group :development do
   gem 'byebug'
   gem 'guard', '>= 0.6.2'
   gem 'guard-bundler', '>= 0.1.3'
-  gem 'guard-rspec', '~> 4.3.1'
+  gem 'guard-rspec', '~> 4.3.1' # the 4.3 is latest version support rspec 2.14
 
   #case HOST_OS
   #  when /darwin/i
