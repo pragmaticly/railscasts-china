@@ -3,7 +3,7 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.12'
+gem 'rails', '~> 4.1.13'
 gem 'mysql2'
 
 # Gems used only for assets and not required
@@ -75,3 +75,4 @@ gem 'hitimes'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem for Rails 4.1.0
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'nokogiri', '~> 1.6.7.rc3'
