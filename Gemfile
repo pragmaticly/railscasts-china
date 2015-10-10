@@ -4,7 +4,7 @@ HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
 gem 'rails', '~> 4.1.13'
-gem 'mysql2'
+gem 'mysql2', '~> 0.4.1'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -34,7 +34,7 @@ gem 'gravatar_image_tag'
 group :development, :test do
   gem 'rspec-rails', '~> 2.14.2', '< 2.99'
   gem 'factory_girl_rails', '>= 3.3.0'
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 2.8.0'
   gem 'rspec-instafail'
   gem 'capybara'
 end
