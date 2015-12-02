@@ -1,13 +1,14 @@
 require 'rbconfig'
+
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.8'
-gem 'mysql2'
+gem 'rails', '~> 4.1.14'
+gem 'mysql2', '~> 0.3.20'
 
 # Gems used only for assets and not required
 # in production environments by default.
-gem 'sass-rails',   '~> 4.0'
+gem 'sass-rails',   '~> 5.0'
 gem 'coffee-rails', '~> 4.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -16,12 +17,12 @@ gem 'coffee-rails', '~> 4.0'
 gem 'uglifier', '~> 2.1', require: false
 
 gem 'jquery-rails'
-gem "omniauth", ">= 1.1.0"
-gem "omniauth-github"
-gem "bootstrap-sass", ">= 2.3.2", "< 3.0"
-gem "coderay"
-gem "kaminari"
-gem "redcarpet"
+gem 'omniauth', '>= 1.1.0'
+gem 'omniauth-github'
+gem 'bootstrap-sass', '>= 2.3.2', '< 3.0'
+gem 'coderay'
+gem 'kaminari'
+gem 'redcarpet'
 
 # File Uploading
 gem 'carrierwave'
@@ -31,11 +32,11 @@ gem 'ancestry'
 gem 'gravatar_image_tag'
 
 group :development, :test do
-  gem "rspec-rails", "~> 2.14.2", "< 2.99"
-  gem "factory_girl_rails", ">= 3.3.0"
-  gem "shoulda-matchers"
-  gem "rspec-instafail"
-  gem "capybara"
+  gem 'rspec-rails', '~> 2.14.2', '< 2.99'
+  gem 'factory_girl_rails', '>= 3.3.0'
+  gem 'shoulda-matchers', '~> 2.8.0'
+  gem 'rspec-instafail'
+  gem 'capybara'
 end
 
 group :development do
@@ -44,10 +45,10 @@ group :development do
   gem 'capistrano-rails', '~> 1.1'
 
   gem 'quiet_assets'
-  gem "byebug"
-  gem "guard", ">= 0.6.2"
-  gem "guard-bundler", ">= 0.1.3"
-  gem "guard-rspec", ">= 0.4.3"
+  gem 'byebug'
+  gem 'guard', '>= 0.6.2'
+  gem 'guard-bundler', '>= 0.1.3'
+  gem 'guard-rspec', '~> 4.3.1' # the 4.3 is latest version support rspec 2.14
 
   #case HOST_OS
   #  when /darwin/i
@@ -61,17 +62,17 @@ group :development do
   #    gem 'win32console'
   #    gem 'rb-notifu'
   # end
-  gem "annotate", '~> 2.6.5'
-  gem "rails_best_practices"
+  gem 'annotate', '~> 2.6.5'
+  gem 'rails_best_practices'
 end
 
 group :test do
-  gem "email_spec", ">= 1.2.1"
-  gem 'simplecov', :require => false
+  gem 'email_spec', '>= 1.2.1'
+  gem 'simplecov', require: false
 end
 
 gem 'hitimes'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem for Rails 4.1.0
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-
+gem 'nokogiri', '~> 1.6.7.rc3'

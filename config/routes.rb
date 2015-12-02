@@ -7,15 +7,23 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :users, only: [ :show, :edit, :update ]
-  resources :votes, only: [ :create, :destroy ]
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  resources :users, only: [:show, :edit, :update]
+  resources :votes, only: [:create, :destroy]
 
   resources :tags, only: [] do
     resources :episodes, only: [:index]
   end
+  # You can have the root of your site routed with "root"
+  root to: 'episodes#index'
+
+  # Example of regular route:
+  #   get 'products/:id' => 'catalog#view'
+  get '/auth/:provider/callback' => 'sessions#create'
+  get '/signin' => 'sessions#new', as: :signin
+  get '/signout' => 'sessions#destroy', as: :signout
+  get '/auth/failure' => 'sessions#failure'
+  get 'about' => 'info#about', as: :about
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
@@ -47,15 +55,6 @@ Rails.application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-
-  # You can have the root of your site routed with "root"
-  root :to => "episodes#index"
-
-  get '/auth/:provider/callback' => 'sessions#create'
-  get '/signin' => 'sessions#new', as: :signin
-  get '/signout' => 'sessions#destroy', as: :signout
-  get '/auth/failure' => 'sessions#failure'
-  get 'about' => 'info#about', as: :about
 
   # Example resource route with concerns:
   #   concern :toggleable do
