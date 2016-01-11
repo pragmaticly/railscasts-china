@@ -62,7 +62,7 @@ group :development do
   #    gem 'win32console'
   #    gem 'rb-notifu'
   # end
-  gem 'annotate', '~> 2.6.5'
+  gem 'annotate', '~> 2.7.0'
   gem 'rails_best_practices'
 end
 
@@ -75,4 +75,3 @@ gem 'hitimes'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem for Rails 4.1.0
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
-gem 'nokogiri', '~> 1.6.7.rc3'
