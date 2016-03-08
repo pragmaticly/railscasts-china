@@ -3,7 +3,7 @@ require 'rbconfig'
 HOST_OS = RbConfig::CONFIG['host_os']
 source 'https://rubygems.org'
 
-gem 'rails', '~> 4.1.14'
+gem 'rails', '~> 4.1.15'
 gem 'mysql2', '~> 0.3.20'
 
 # Gems used only for assets and not required
