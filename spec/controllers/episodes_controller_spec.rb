@@ -56,7 +56,7 @@ describe EpisodesController do
 
     describe "POST 'create'" do
       let(:params) { { "name" => 'Test Episode' } }
-      let(:episode) { double("Episode", class: Episode) }
+      let(:episode) { mock_model('Episode') }
 
       before do
         Episode.stub(:new).with(params).and_return(episode)
@@ -93,7 +93,7 @@ describe EpisodesController do
 
     describe "PATCH 'update'" do
       let(:params) { { "name" => "Updated Episode" } }
-      let(:episode) { double(:episode, class: Episode) }
+      let(:episode) { mock_model('Episode') }
 
       before do
         Episode.stub(:find_by).and_return(episode)

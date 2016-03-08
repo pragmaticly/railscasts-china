@@ -9,7 +9,7 @@
 #  updated_at :datetime
 #
 
-class Tagging < ActiveRecord::Base
+class Tagging < ApplicationRecord
   belongs_to :tag
   belongs_to :episodes
 end

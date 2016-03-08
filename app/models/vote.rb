@@ -10,7 +10,7 @@
 #  election_id :integer
 #
 
-class Vote < ActiveRecord::Base
+class Vote < ApplicationRecord
   belongs_to :episode, counter_cache: true
   belongs_to :user
 end
