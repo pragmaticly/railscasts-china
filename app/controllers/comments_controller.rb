@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  respond_to :html, :json
   before_action :authenticate_user!
   before_action :fetch_episode
 
