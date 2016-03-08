@@ -8,7 +8,7 @@
 #  updated_at :datetime
 #
 
-class Tag < ActiveRecord::Base
+class Tag < ApplicationRecord
   has_many :taggings
   has_many :episodes, through: :taggings
   validates :name, presence: true

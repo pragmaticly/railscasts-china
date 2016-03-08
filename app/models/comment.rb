@@ -15,7 +15,7 @@
 #  index_comments_on_ancestry  (ancestry)
 #
 
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   belongs_to :episode, counter_cache: true
   belongs_to :user
   validates :content, presence: true

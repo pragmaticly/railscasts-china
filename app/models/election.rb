@@ -9,6 +9,6 @@
 #  updated_at                :datetime
 #
 
-class Election < ActiveRecord::Base
+class Election < ApplicationRecord
   has_many :episodes
 end

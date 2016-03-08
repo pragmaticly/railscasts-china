@@ -25,7 +25,7 @@
 #  allow_comment  :boolean
 #
 
-class Episode < ActiveRecord::Base
+class Episode < ApplicationRecord
 
   mount_uploader :still, StillUploader
 
